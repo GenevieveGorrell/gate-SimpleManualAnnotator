@@ -1,0 +1,123 @@
+<project name="gate-SimpleManualAnnotator" basedir="." default="jar">
+
+  <property file="build.properties" />
+
+  <!--=======================================================
+    Property settings.  You should not need to edit these
+    directly, if you need to set a different value for any
+    property you should edit build.properties and override
+    them there.
+  ========================================================-->
+
+  <!-- Name of the plugin -->
+  <property name="jar.name" value="gate-SimpleManualAnnotator"/>
+
+  <!-- Make environment variables available -->
+  <property environment="env" />
+
+  <!-- If environment variable GATE_HOME is set, use it for
+       gate.home (unless it was already set in build.properties -->
+  <condition property="gate.home" value="${env.GATE_HOME}">
+    <isset property="env.GATE_HOME"/>
+  </condition>
+
+  <!-- If gate.home is not set from build.properties or the 
+       environment variable GATE_HOME, assume this: -->
+  <property name="gate.home" location="../../../gate-top/externals/gate" />
+
+  <!-- location of GATE lib directory - should be inferred from gate.home -->
+  <property name="gate.lib" location="${gate.home}/lib" />
+
+  <!-- location of gate.jar - should be inferred from gate.home -->
+  <property name="gate.jar" location="${gate.home}/bin/gate.jar" />
+
+  <!-- Source directory - contains the Java source files for this plugin -->
+  <property name="src.dir" location="src" />
+
+  <!-- directory to contain the compiled classes -->
+  <property name="classes.dir" location="classes" />
+
+  <!-- lib directory - put any additional JAR files your plugin requires into
+       this directory.  You will also need to add them as <JAR> entries in
+       creole.xml -->
+  <property name="lib.dir" location="lib" />
+
+  <!-- location for the generated JAR file -->
+  <property name="jar.location" location="${jar.name}.jar" />
+
+
+
+  <!-- Classpath to compile - includes gate.jar, GATE/lib/*.jar and any local
+       library JAR files. -->
+  <path id="compile.classpath">
+    <pathelement location="${gate.jar}" />
+    <fileset dir="${gate.lib}">
+      <include name="**/*.jar" />
+      <include name="**/*.zip" />
+    </fileset>
+    <!-- <fileset dir="${lib.dir}" includes="**/*.jar" /> -->
+  </path>
+
+  <path id="run.classpath">
+    <pathelement location="${jar.location}" />
+    <pathelement location="${gate.jar}" />
+    <fileset dir="${gate.lib}">
+      <include name="**/*.jar" />
+      <include name="**/*.zip" />
+    </fileset>
+    <!-- <fileset dir="${lib.dir}" includes="**/*.jar" />  -->
+
+  </path>
+  
+  <!--====================== Targets ============================-->
+  
+  <!-- create build directory structure -->
+  <target name="prepare">
+    <mkdir dir="${classes.dir}" />
+  </target>
+
+  <!-- compile the source -->
+  <target name="compile" depends="prepare">
+    <javac classpathref="compile.classpath"
+           srcdir="${src.dir}"
+           destdir="${classes.dir}"
+           debug="true"
+           debuglevel="lines,source"
+    	   encoding="UTF-8"
+           source="1.6"
+           target="1.6">
+    	<compilerarg value="-Xmaxwarns" />
+    	<compilerarg value="${gate.compile.maxwarnings}" />
+    	<compilerarg value="-Xlint:all" />
+    </javac>
+  </target>
+
+  <!-- copy resources (anything non-.java) from src to classes -->
+  <target name="copy.resources" depends="prepare">
+    <copy todir="${classes.dir}">
+      <fileset dir="${src.dir}" excludes="**/*.java" />
+    </copy>
+  </target>
+
+  <!-- create the JAR file -->
+  <target name="jar" depends="compile, copy.resources" >
+    <jar destfile="${jar.location}"
+         update="false"
+         basedir="${classes.dir}" >
+      <manifest>
+        <attribute name="Main-Class" value="gate.tools.SimpleManualAnnotator"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <!-- remove the generated .class files -->
+  <target name="clean.classes" >
+    <delete dir="${classes.dir}" />
+  </target>
+
+  <!-- Clean up - remove .class and .jar files -->
+  <target name="clean" depends="clean.classes" >
+    <delete file="${jar.location}" />
+  </target>
+
+</project>
