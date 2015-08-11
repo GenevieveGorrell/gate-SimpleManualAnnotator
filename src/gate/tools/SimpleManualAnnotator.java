@@ -17,7 +17,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
@@ -50,18 +52,11 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
      * this method should be invoked from the 
      * event-dispatching thread.
      */
-	
-	static int OPTIONSFROMTYPEANDFEATURE = 0;
-	static int OPTIONSFROMFEATURE = 1;
-	static int OPTIONSFROMCOMMANDLINE = 2;
-	
-	static int NONEOFABOVE = 10001;
-	static int SPURIOUS = 10002;
-	static int UNDONE = 10003;
-	
-	static String noneofabove = "<NONE OF ABOVE>";
-	static String spurious = "<SPURIOUS>";
-	static String undone = "<NOT DONE>";
+
+	public enum Mode {
+		OPTIONSFROMTYPEANDFEATURE, OPTIONSFROMFEATURE, OPTIONSFROMSTRING
+	}
+		
 	static String back = "Back";
 	static String next = "Next";
 	static String saveandexit = "Save and Exit";
@@ -75,15 +70,6 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	int currentAnnIndex = -1;
 	int mentionsInDoc = -1;
 	
-	//Tmp--to be got from command line
-	int mode = OPTIONSFROMTYPEANDFEATURE;
-	String inputASName = null;
-	String contextType = "Sentence";
-	String mentionType = "LookupList";
-	String optionsType = "MetaMap";
-	String optionsFeat = "PreferredName";
-	String outputASName = "Key";
-	
 	JButton backButton, nextButton, exitButton;
 	JLabel progress;
 	JEditorPane display = new JEditorPane();
@@ -92,22 +78,10 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	
 	AnnotationTask currentAnnotationTask;
 	
-	public class AnnotationTask{
-		Annotation mention;
-		String context;
-		long offset; //Relative to which start and end of mention are given
-		long startOfMention;
-		long endOfMention;
-		String[] options;
-		Annotation[] optionsAnns;
-		boolean includeNoneOfAbove = true;
-		boolean includeSpurious = true;
-		boolean includeUndone = true;
-		Annotation previouslySelected = null;
-		int indexOfSelected = UNDONE;
-	}
+	Configuration config;
 	
-    public SimpleManualAnnotator() {
+    public SimpleManualAnnotator(File conf) {
+		config = new Configuration(conf);
     	next();
     	
     	JPanel dispFrame = new JPanel();
@@ -203,18 +177,20 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
     
     public static void main(String[] args) throws Exception {
     	Gate.init();
-
 		gate.Utils.loadPlugin("Format_FastInfoset");
 		
-    	if(args.length!=1){
-    		System.out.println("Usage: simpleManualAnnotator <corpusDir>");
+    	if(args.length!=2){
+    		System.out.println("Usage: simpleManualAnnotator <config> <corpusDir>");
+			System.exit(0);
     	} else {
-			corpusdir = new File(args[0]);
+			corpusdir = new File(args[1]);
 			if(!corpusdir.isDirectory()){
 				System.err.println(corpusdir.getAbsolutePath() + " is not a directory!");
 				System.exit(0);
 			} else {
 				docsInDir = corpusdir.listFiles().length;
+				System.out.println("Annotating " + docsInDir + " documents from "
+						+ corpusdir.getAbsolutePath());
 			}
     	}
     	
@@ -222,116 +198,30 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 			System.err.println("No documents to annotate!");
 			System.exit(0);
     	}
-    	
-    	SimpleManualAnnotator sma = new SimpleManualAnnotator();
+
+    	SimpleManualAnnotator sma = new SimpleManualAnnotator(new File(args[0]));
     	createAndShowGUI(sma);
-    	
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        //javax.swing.SwingUtilities.invokeLater(new Runnable() {
-        //    public void run() {
-        //        createAndShowGUI(sma); 
-        //    }
-        //});
     }
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		AnnotationSet outputAS = currentDoc.getAnnotations(outputASName);
+	public void actionPerformed(ActionEvent ev) {
+		AnnotationSet outputAS = currentDoc.getAnnotations(config.outputASName);
 		
-		if (back.equals(e.getActionCommand())) {
+		if (back.equals(ev.getActionCommand())) {
 			prev();
-	    } else if (next.equals(e.getActionCommand())) {
+	    } else if (next.equals(ev.getActionCommand())) {
 			next();
-	    } else if (noneofabove.equals(e.getActionCommand())) {
-	    	if(currentAnnotationTask.previouslySelected!=null){
-	    		outputAS.remove(currentAnnotationTask.previouslySelected);
-	    	}
-	    	FeatureMap fm = Factory.newFeatureMap();
-	    	fm.put(optionsFeat, noneofabove);
-	    	Utils.addAnn(outputAS, currentAnnotationTask.mention, optionsType, fm);
-			next();
-	    } else if (spurious.equals(e.getActionCommand())) {
-	    	if(currentAnnotationTask.previouslySelected!=null){
-	    		outputAS.remove(currentAnnotationTask.previouslySelected);
-	    	}
-	    	FeatureMap fm = Factory.newFeatureMap();
-	    	fm.put(optionsFeat, spurious);
-	    	Utils.addAnn(outputAS, currentAnnotationTask.mention, optionsType, fm);
-			next();
-	    } else if (undone.equals(e.getActionCommand())) {
-	    	if(currentAnnotationTask.previouslySelected!=null){
-	    		outputAS.remove(currentAnnotationTask.previouslySelected);
-	    	}
-			next();
-	    } else if (saveandexit.equals(e.getActionCommand())) {
+	    } else if (saveandexit.equals(ev.getActionCommand())) {
 			saveDoc(this);
 			System.exit(0);
 	    } else {
-	    	if(currentAnnotationTask.previouslySelected!=null){
-	    		outputAS.remove(currentAnnotationTask.previouslySelected);
-	    	}
-	    	String option = e.getActionCommand();
-	    	int opt = new Integer(option.substring(6)).intValue();
-	    	Annotation toAdd = currentAnnotationTask.optionsAnns[opt];
-	    	FeatureMap fm = Factory.newFeatureMap();
-	    	fm.putAll(toAdd.getFeatures());
-	    	Utils.addAnn(outputAS, currentAnnotationTask.mention, optionsType, fm);
+	    	currentAnnotationTask.updateDocument(ev);
 			next();
 	    }
 		
 		redisplay();
         revalidate();
         repaint();
-	}
-	
-	public AnnotationTask createAnnotationTask(Annotation thisAnn){  
-		AnnotationTask at = new AnnotationTask();
-		AnnotationSet inputAS = currentDoc.getAnnotations(inputASName);
-		
-		AnnotationSet outputAS = currentDoc.getAnnotations(outputASName);
-		AnnotationSet previous = Utils.getCoextensiveAnnotations(outputAS, thisAnn);
-		String prev = null;
-		if(previous.size()==1){
-			at.previouslySelected = Utils.getOnlyAnn(previous);
-			prev = at.previouslySelected.getFeatures().get(optionsFeat).toString();
-			if(prev.equals(noneofabove)){
-				at.indexOfSelected = NONEOFABOVE;
-			} else if(prev.equals(spurious)){
-				at.indexOfSelected = SPURIOUS;
-			} else if(prev.equals(undone)){
-				at.indexOfSelected = UNDONE;
-			}
-		}
-		
-		at.mention = thisAnn;
-		
-		//Context
-		Annotation contextAnn = Utils.getOverlappingAnnotations(
-				inputAS, thisAnn, contextType).iterator().next();
-		at.context = Utils.cleanStringFor(currentDoc, contextAnn);
-		at.offset = contextAnn.getStartNode().getOffset();
-		at.startOfMention = thisAnn.getStartNode().getOffset();
-		at.endOfMention = thisAnn.getEndNode().getOffset();
-		
-		//Options
-		AnnotationSet options = Utils.getCoextensiveAnnotations(inputAS, thisAnn, optionsType);
-		Iterator<Annotation> it = options.iterator();
-		at.options = new String[options.size()];
-		at.optionsAnns = new Annotation[options.size()];
-		int index = 0;
-		while(it.hasNext()){
-			Annotation optan = it.next();
-			String feat = optan.getFeatures().get(optionsFeat).toString();
-			at.options[index] = feat;
-			at.optionsAnns[index] = optan;
-			if(feat.equals(prev)){
-				at.indexOfSelected = index;
-			}
-			index++;
-		}
-		
-		return at;
 	}
 	
 	public void next(){
@@ -352,7 +242,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	    	   		}
 	    	   		
 	    	   		//Having got the doc we set up the anns
-	    	   		mentionList = currentDoc.getAnnotations(inputASName).get(mentionType).inDocumentOrder();
+	    	   		mentionList = currentDoc.getAnnotations(config.inputASName).get(config.mentionType).inDocumentOrder();
 	    	   		mentionsInDoc = mentionList.size();
 	    	   		currentAnnIndex = -1;
 	    	   		if(mentionsInDoc>0){
@@ -368,7 +258,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         //since we have made sure we are on a doc with at least one remaining mention.
         currentAnnIndex++;
         Annotation toDisplay = mentionList.get(currentAnnIndex);
-        currentAnnotationTask = createAnnotationTask(toDisplay);
+        currentAnnotationTask = new AnnotationTask(toDisplay, config, currentDoc);
 	}
 	
 	public void prev(){
@@ -388,7 +278,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	    	   		}
 	    	   		
 	    	   		//Having got the doc we set up the anns
-	    	   		mentionList = currentDoc.getAnnotations(inputASName).get(mentionType).inDocumentOrder();
+	    	   		mentionList = currentDoc.getAnnotations(config.inputASName).get(config.mentionType).inDocumentOrder();
 	    	   		mentionsInDoc = mentionList.size();
 	    	   		currentAnnIndex = mentionsInDoc;
 	    	   		if(mentionsInDoc>0){
@@ -404,7 +294,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         //since we have made sure we are on a doc with at least one remaining mention.
         currentAnnIndex--;
         Annotation toDisplay = mentionList.get(currentAnnIndex);
-        currentAnnotationTask = createAnnotationTask(toDisplay);
+        currentAnnotationTask = new AnnotationTask(toDisplay, config, currentDoc);
 	}
 	
 	private void redisplay(){
@@ -441,42 +331,40 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	        button.setBackground(new Color(0.99F, 0.95F, 0.99F));
 	        optionsFrame.add(button);
 	    }
-        if(currentAnnotationTask.includeNoneOfAbove){
-	        JRadioButton button = new JRadioButton(noneofabove);
+        if(config.includeNoneOfAbove){
+	        JRadioButton button = new JRadioButton(AnnotationTask.noneofabove);
 	        button.setMnemonic(KeyEvent.VK_9);
-	        button.setActionCommand(noneofabove);
+	        button.setActionCommand(AnnotationTask.noneofabove);
 	        optionGroup.add(button);
 	        button.addActionListener(this);
-	        if(currentAnnotationTask.indexOfSelected==NONEOFABOVE){
+	        if(currentAnnotationTask.indexOfSelected==AnnotationTask.NONEOFABOVE){
 	        	button.setSelected(true);
 	        }
 	        button.setBackground(new Color(0.99F, 0.95F, 0.99F));
 	        optionsFrame.add(button);
         }
-        if(currentAnnotationTask.includeSpurious){
-	        JRadioButton button = new JRadioButton(spurious);
+        if(config.includeSpurious){
+	        JRadioButton button = new JRadioButton(AnnotationTask.spurious);
 	        button.setMnemonic(KeyEvent.VK_0);
-	        button.setActionCommand(spurious);
+	        button.setActionCommand(AnnotationTask.spurious);
 	        optionGroup.add(button);
 	        button.addActionListener(this);
-	        if(currentAnnotationTask.indexOfSelected==SPURIOUS){
+	        if(currentAnnotationTask.indexOfSelected==AnnotationTask.SPURIOUS){
 	        	button.setSelected(true);
 	        }
 	        button.setBackground(new Color(0.99F, 0.95F, 0.99F));
 	        optionsFrame.add(button);
         }
-        if(currentAnnotationTask.includeUndone){
-	        JRadioButton button = new JRadioButton(undone);
-	        button.setMnemonic(KeyEvent.VK_0);
-	        button.setActionCommand(undone);
-	        optionGroup.add(button);
-	        button.addActionListener(this);
-	        if(currentAnnotationTask.indexOfSelected==UNDONE){
-	        	button.setSelected(true);
-	        }
-	        button.setBackground(Color.WHITE);
-	        optionsFrame.add(button);
+        JRadioButton button = new JRadioButton(AnnotationTask.undone);
+        button.setMnemonic(KeyEvent.VK_0);
+        button.setActionCommand(AnnotationTask.undone);
+        optionGroup.add(button);
+        button.addActionListener(this);
+        if(currentAnnotationTask.indexOfSelected==AnnotationTask.UNDONE){
+        	button.setSelected(true);
         }
+        button.setBackground(Color.WHITE);
+        optionsFrame.add(button);
 	}
 	
 	private String progressReport(){
@@ -486,13 +374,29 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	
 	private static void saveDoc(SimpleManualAnnotator sma){
 		if(sma.currentDoc!=null){
+			FileWriter thisdocfile = null;
 			try {
-				FileWriter thisdocfile = new FileWriter(corpusdir.listFiles()[sma.currentDocIndex]);
-				thisdocfile.write(sma.currentDoc.toXml());
-				thisdocfile.close();
+				thisdocfile = new FileWriter(corpusdir.listFiles()[sma.currentDocIndex]);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}
+			if(thisdocfile!=null){
+				try {
+					thisdocfile.write(sma.currentDoc.toXml());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				try {
+					thisdocfile.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else {
+				System.out.println("Failed to access file " + sma.currentDocIndex
+						+ " in " + corpusdir.getAbsolutePath() + " for writing!");
 			}
 		}
 	}
