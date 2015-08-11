@@ -1,0 +1,29 @@
+mode = OPTIONSFROMTYPEANDFEATURE
+inputASName = null
+contextType = Sentence
+mentionType = LookupList
+optionsType = MetaMap
+optionsFeat = PreferredName
+outputASName = Key
+includeNoneOfAbove = true
+includeSpurious = true
+
+#mode = OPTIONSFROMFEATURE
+#inputASName = null
+#contextType = Sentence
+#mentionType = LookupList
+#optionsFeat = cuis
+#outputASName = Key
+#outputFeat = cui
+#includeNoneOfAbove = true
+#includeSpurious = true
+
+#mode = OPTIONSFROMSTRING
+#inputASName = null
+#contextType = Sentence
+#mentionType = LookupList
+#options = Positive;Negative;Unknown
+#outputASName = Key
+#outputFeat = class
+#includeNoneOfAbove = false
+#includeSpurious = false

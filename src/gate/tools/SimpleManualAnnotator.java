@@ -13,6 +13,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -69,7 +70,8 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	static int docsInDir;
 	int currentAnnIndex = -1;
 	int mentionsInDoc = -1;
-	
+
+    static JFrame frame = new JFrame("GATE Simple Manual Annotator");
 	JButton backButton, nextButton, exitButton;
 	JLabel progress;
 	JEditorPane display = new JEditorPane();
@@ -114,19 +116,16 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         backButton = new JButton(back);
         backButton.setVerticalTextPosition(AbstractButton.CENTER);
         backButton.setHorizontalTextPosition(AbstractButton.CENTER); //aka LEFT, for left-to-right locales
-        backButton.setMnemonic(KeyEvent.VK_A);
         backButton.setActionCommand(back);
  
         nextButton = new JButton(next);
         nextButton.setVerticalTextPosition(AbstractButton.CENTER);
         nextButton.setHorizontalTextPosition(AbstractButton.CENTER);
-        nextButton.setMnemonic(KeyEvent.VK_Z);
         nextButton.setActionCommand(next);
 
         exitButton = new JButton(saveandexit);
         exitButton.setVerticalTextPosition(AbstractButton.CENTER);
         exitButton.setHorizontalTextPosition(AbstractButton.CENTER);
-        exitButton.setMnemonic(KeyEvent.VK_Z);
         exitButton.setActionCommand(saveandexit);
   
         //Listen for actions on buttons 1 and 2.
@@ -145,11 +144,11 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         
         add(dispFrame);
         add(buttonFrame);
+
     }
 	
     private static void createAndShowGUI(final SimpleManualAnnotator sma) {
         //Create and set up the window.
-        JFrame frame = new JFrame("GATE Simple Manual Annotator");
         frame.setPreferredSize(new Dimension(700, 450));
         frame.setMinimumSize(new Dimension(10, 10));
  
@@ -164,16 +163,80 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         frame.setLocation(dim.width/2-frame.getSize().width/2, dim.height/2-frame.getSize().height/2);
         frame.setVisible(true);
         
-        class MyWindowListener extends WindowAdapter {
-    		public void windowClosing(WindowEvent ev) {
-    			saveDoc(sma);
-    			System.exit(0);
-			}
-    	}
-        frame.addWindowListener(new MyWindowListener());
+        frame.addWindowListener(sma.new MyWindowListener());
+        frame.addKeyListener(sma.new MyKeyListener());
+        frame.setFocusable(true); // set focusable to true
+        frame.requestFocusInWindow(); // request focus
     }
-    
-    
+
+    class MyWindowListener extends WindowAdapter {
+    	@Override
+		public void windowClosing(WindowEvent ev) {
+			saveDoc();
+			System.exit(0);
+		}
+	}
+
+    class MyKeyListener extends KeyAdapter {
+        @Override
+        public void keyPressed(KeyEvent e) {
+        	switch (e.getKeyCode()) {
+        	case KeyEvent.VK_LEFT:
+        	case KeyEvent.VK_UP:
+        		act(back);
+        		break;
+        	case KeyEvent.VK_RIGHT:
+        	case KeyEvent.VK_DOWN:
+        		act(next);
+        		break;
+        	case KeyEvent.VK_Q:
+        		act(AnnotationTask.noneofabove);
+        		break;
+        	case KeyEvent.VK_A:
+        		act(AnnotationTask.spurious);
+        		break;
+        	case KeyEvent.VK_Z:
+        		act(AnnotationTask.undone);
+        		break;
+        	case KeyEvent.VK_1:
+        	case KeyEvent.VK_NUMPAD1:
+        		act("option0"); //It expects index
+        		break;
+        	case KeyEvent.VK_2:
+        	case KeyEvent.VK_NUMPAD2:
+        		act("option1");
+        		break;
+        	case KeyEvent.VK_3:
+        	case KeyEvent.VK_NUMPAD3:
+        		act("option2");
+        		break;
+        	case KeyEvent.VK_4:
+        	case KeyEvent.VK_NUMPAD4:
+        		act("option3");
+        		break;
+        	case KeyEvent.VK_5:
+        	case KeyEvent.VK_NUMPAD5:
+        		act("option4");
+        		break;
+        	case KeyEvent.VK_6:
+        	case KeyEvent.VK_NUMPAD6:
+        		act("option5");
+        		break;
+        	case KeyEvent.VK_7:
+        	case KeyEvent.VK_NUMPAD7:
+        		act("option6");
+        		break;
+        	case KeyEvent.VK_8:
+        	case KeyEvent.VK_NUMPAD8:
+        		act("option7");
+        		break;
+        	case KeyEvent.VK_9:
+        	case KeyEvent.VK_NUMPAD9:
+        		act("option8");
+        		break;
+        	}
+        }
+    }
     
     public static void main(String[] args) throws Exception {
     	Gate.init();
@@ -205,29 +268,32 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent ev) {
-		AnnotationSet outputAS = currentDoc.getAnnotations(config.outputASName);
-		
-		if (back.equals(ev.getActionCommand())) {
+		act(ev.getActionCommand());
+	}
+	
+	public void act(String what){		
+		if (back.equals(what)) {
 			prev();
-	    } else if (next.equals(ev.getActionCommand())) {
+	    } else if (next.equals(what)) {
 			next();
-	    } else if (saveandexit.equals(ev.getActionCommand())) {
-			saveDoc(this);
+	    } else if (saveandexit.equals(what)) {
+			saveDoc();
 			System.exit(0);
 	    } else {
-	    	currentAnnotationTask.updateDocument(ev);
-			next();
+	    	int error = currentAnnotationTask.updateDocument(what);
+			if(error!=-1) next();
 	    }
 		
 		redisplay();
         revalidate();
         repaint();
+        frame.requestFocusInWindow();
 	}
 	
 	public void next(){
 		//If we are initializing or on the last annotation we need a new doc
         if(currentDocIndex==-1 || currentAnnIndex==mentionsInDoc-1){
-			saveDoc(this);
+			saveDoc();
         	int foundAnns = 0;
         	while(foundAnns==0){//Hunt for next doc with mentions
 	    		if(currentDocIndex<corpusdir.listFiles().length-1){
@@ -263,7 +329,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	
 	public void prev(){
 		if(currentAnnIndex<1){ //We need to move back a doc
-			saveDoc(this);
+			saveDoc();
         	int foundAnns = 0;
         	while(foundAnns==0){//Hunt for preceding doc with mentions
 	    		if(currentDocIndex>0){
@@ -319,8 +385,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
     	optionGroup = new ButtonGroup();
     	
         for(int i=0;i<currentAnnotationTask.options.length;i++){
-	        JRadioButton button = new JRadioButton(currentAnnotationTask.options[i]);
-	        button.setMnemonic(i);
+	        JRadioButton button = new JRadioButton(i+1 + ": " + currentAnnotationTask.options[i]);
 	        button.setActionCommand("option" + i);
 	        button.setSelected(true);
 	        optionGroup.add(button);
@@ -332,8 +397,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	        optionsFrame.add(button);
 	    }
         if(config.includeNoneOfAbove){
-	        JRadioButton button = new JRadioButton(AnnotationTask.noneofabove);
-	        button.setMnemonic(KeyEvent.VK_9);
+	        JRadioButton button = new JRadioButton("Q: " + AnnotationTask.noneofabove);
 	        button.setActionCommand(AnnotationTask.noneofabove);
 	        optionGroup.add(button);
 	        button.addActionListener(this);
@@ -344,8 +408,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	        optionsFrame.add(button);
         }
         if(config.includeSpurious){
-	        JRadioButton button = new JRadioButton(AnnotationTask.spurious);
-	        button.setMnemonic(KeyEvent.VK_0);
+	        JRadioButton button = new JRadioButton("A: " + AnnotationTask.spurious);
 	        button.setActionCommand(AnnotationTask.spurious);
 	        optionGroup.add(button);
 	        button.addActionListener(this);
@@ -355,8 +418,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	        button.setBackground(new Color(0.99F, 0.95F, 0.99F));
 	        optionsFrame.add(button);
         }
-        JRadioButton button = new JRadioButton(AnnotationTask.undone);
-        button.setMnemonic(KeyEvent.VK_0);
+        JRadioButton button = new JRadioButton("Z: " + AnnotationTask.undone);
         button.setActionCommand(AnnotationTask.undone);
         optionGroup.add(button);
         button.addActionListener(this);
@@ -372,18 +434,18 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
     			+ (currentAnnIndex+1) + " of " + mentionsInDoc + " annotations.";
 	}
 	
-	private static void saveDoc(SimpleManualAnnotator sma){
-		if(sma.currentDoc!=null){
+	private void saveDoc(){
+		if(currentDoc!=null){
 			FileWriter thisdocfile = null;
 			try {
-				thisdocfile = new FileWriter(corpusdir.listFiles()[sma.currentDocIndex]);
+				thisdocfile = new FileWriter(corpusdir.listFiles()[currentDocIndex]);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			if(thisdocfile!=null){
 				try {
-					thisdocfile.write(sma.currentDoc.toXml());
+					thisdocfile.write(currentDoc.toXml());
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -395,7 +457,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 					e.printStackTrace();
 				}
 			} else {
-				System.out.println("Failed to access file " + sma.currentDocIndex
+				System.out.println("Failed to access file " + currentDocIndex
 						+ " in " + corpusdir.getAbsolutePath() + " for writing!");
 			}
 		}

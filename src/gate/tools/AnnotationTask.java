@@ -116,7 +116,7 @@ public class AnnotationTask {
 		}
 	}
 
-	public void updateDocument(ActionEvent ev){
+	public int updateDocument(String action){
 		AnnotationSet outputAS = currentDoc.getAnnotations(config.outputASName);
 		
 		//Always start by removing whatever is there
@@ -126,63 +126,66 @@ public class AnnotationTask {
     	
 		switch (config.mode) {
 		case OPTIONSFROMTYPEANDFEATURE:
-		    if (AnnotationTask.spurious.equals(ev.getActionCommand())) {
+		    if (AnnotationTask.spurious.equals(action) && config.includeSpurious) {
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.optionsFeat, AnnotationTask.spurious);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
-		    } else if (AnnotationTask.noneofabove.equals(ev.getActionCommand())) {
+		    } else if (AnnotationTask.noneofabove.equals(action) && config.includeNoneOfAbove) {
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.optionsFeat, AnnotationTask.noneofabove);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
-		    } else if (AnnotationTask.undone.equals(ev.getActionCommand())) {
+		    } else if (AnnotationTask.undone.equals(action)) {
 		    	//Nothing to do, we already removed it
-			} else { //We have an option
-		    	String option = ev.getActionCommand();
-		    	int opt = new Integer(option.substring(6)).intValue();
-		    	Annotation toAdd = (Annotation)optionsObjects[opt];
-		    	FeatureMap fm = Factory.newFeatureMap();
-		    	fm.putAll(toAdd.getFeatures());
-		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
+			} else { //We have a potential option
+		    	int opt = new Integer(action.substring(6)).intValue();
+		    	if(opt>=0 && opt<optionsObjects.length){
+		    		Annotation toAdd = (Annotation)optionsObjects[opt];
+			    	FeatureMap fm = Factory.newFeatureMap();
+			    	fm.putAll(toAdd.getFeatures());
+			    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
+		    	} else {
+		    		System.out.println("Ignoring invalid option.");
+		    		return -1;
+		    	}
 			}
 			break;
 		case OPTIONSFROMFEATURE:
-		    if (AnnotationTask.spurious.equals(ev.getActionCommand())) {
+		    if (AnnotationTask.spurious.equals(action)) {
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, AnnotationTask.spurious);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
-		    } else if (AnnotationTask.noneofabove.equals(ev.getActionCommand())) {
+		    } else if (AnnotationTask.noneofabove.equals(action)) {
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, AnnotationTask.noneofabove);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
-		    } else if (AnnotationTask.undone.equals(ev.getActionCommand())) {
+		    } else if (AnnotationTask.undone.equals(action)) {
 		    	//Nothing to do, we already removed it
 			} else { //We have an option
-		    	String option = ev.getActionCommand();
-		    	int opt = new Integer(option.substring(6)).intValue();
+		    	int opt = new Integer(action.substring(6)).intValue();
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, this.optionsObjects[opt]);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
 			}
 			break;
 		case OPTIONSFROMSTRING:
-		    if (AnnotationTask.spurious.equals(ev.getActionCommand())) {
+		    if (AnnotationTask.spurious.equals(action)) {
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, AnnotationTask.spurious);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
-		    } else if (AnnotationTask.noneofabove.equals(ev.getActionCommand())) {
+		    } else if (AnnotationTask.noneofabove.equals(action)) {
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, AnnotationTask.noneofabove);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
-		    } else if (AnnotationTask.undone.equals(ev.getActionCommand())) {
+		    } else if (AnnotationTask.undone.equals(action)) {
 		    	//Nothing to do, we already removed it
 			} else { //We have an option
-		    	String option = ev.getActionCommand();
-		    	int opt = new Integer(option.substring(6)).intValue();
+		    	int opt = new Integer(action.substring(6)).intValue();
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, this.options[opt]);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
 			}
 			break;
 		}
+		return 1;
 	}
 }
