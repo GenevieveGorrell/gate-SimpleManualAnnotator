@@ -123,6 +123,8 @@ public class AnnotationTask {
     	if(previouslySelected!=null){
     		outputAS.remove(previouslySelected);
     	}
+    	//To be sure ..
+    	outputAS.removeAll(Utils.getCoextensiveAnnotations(outputAS, mention));
     	
 		switch (config.mode) {
 		case OPTIONSFROMTYPEANDFEATURE:

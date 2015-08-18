@@ -23,6 +23,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -58,33 +59,36 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 		OPTIONSFROMTYPEANDFEATURE, OPTIONSFROMFEATURE, OPTIONSFROMSTRING
 	}
 		
+	static String backundone = "Last Undone";
 	static String back = "Back";
 	static String next = "Next";
+	static String nextundone = "Next Undone";
 	static String saveandexit = "Save and Exit";
-	
-	static File corpusdir = null;
-	Document currentDoc;
-	List<Annotation> mentionList;
-	
-	int currentDocIndex = -1;
-	static int docsInDir;
-	int currentAnnIndex = -1;
-	int mentionsInDoc = -1;
 
     static JFrame frame = new JFrame("GATE Simple Manual Annotator");
-	JButton backButton, nextButton, exitButton;
+	JButton lastUndoneButton, backButton, nextButton, undoneButton, exitButton;
 	JLabel progress;
 	JEditorPane display = new JEditorPane();
     ButtonGroup optionGroup = new ButtonGroup();
 	JPanel optionsFrame = new JPanel();
 	
-	AnnotationTask currentAnnotationTask;
-	
+	//Set at init
+	File[] corpus;
 	Configuration config;
 	
-    public SimpleManualAnnotator(File conf) {
+	//Globals for corpus navigation
+	Document currentDoc;
+	List<Annotation> mentionList;
+	int currentDocIndex = -1;
+	int currentAnnIndex = -1;
+	int mentionsInDoc = -1;
+	AnnotationTask currentAnnotationTask;
+
+	
+    public SimpleManualAnnotator(File conf, File[] corpus) {
 		config = new Configuration(conf);
-    	next();
+		this.corpus = corpus;
+		next(true);
     	
     	JPanel dispFrame = new JPanel();
     	dispFrame.setLayout(new BoxLayout(dispFrame, BoxLayout.Y_AXIS));
@@ -113,6 +117,11 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         redisplay();
     	
         JPanel buttonFrame = new JPanel();
+        lastUndoneButton = new JButton(backundone);
+        lastUndoneButton.setVerticalTextPosition(AbstractButton.CENTER);
+        lastUndoneButton.setHorizontalTextPosition(AbstractButton.CENTER); //aka LEFT, for left-to-right locales
+        lastUndoneButton.setActionCommand(backundone);
+        
         backButton = new JButton(back);
         backButton.setVerticalTextPosition(AbstractButton.CENTER);
         backButton.setHorizontalTextPosition(AbstractButton.CENTER); //aka LEFT, for left-to-right locales
@@ -123,23 +132,34 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         nextButton.setHorizontalTextPosition(AbstractButton.CENTER);
         nextButton.setActionCommand(next);
 
+        undoneButton = new JButton(nextundone);
+        undoneButton.setVerticalTextPosition(AbstractButton.CENTER);
+        undoneButton.setHorizontalTextPosition(AbstractButton.CENTER);
+        undoneButton.setActionCommand(nextundone);
+
         exitButton = new JButton(saveandexit);
         exitButton.setVerticalTextPosition(AbstractButton.CENTER);
         exitButton.setHorizontalTextPosition(AbstractButton.CENTER);
         exitButton.setActionCommand(saveandexit);
   
         //Listen for actions on buttons 1 and 2.
+        lastUndoneButton.addActionListener(this);
         backButton.addActionListener(this);
         nextButton.addActionListener(this);
+        undoneButton.addActionListener(this);
         exitButton.addActionListener(this);
  
+        lastUndoneButton.setToolTipText("Click this button to return to the last undone item.");
         backButton.setToolTipText("Click this button to return to the previous item.");
         nextButton.setToolTipText("Click this button to skip to the next item.");
+        undoneButton.setToolTipText("Click this button to skip to the next undone item.");
         exitButton.setToolTipText("Click this button to save the current document and exit.");
  
         //Add Components to this container, using the default FlowLayout.
+        buttonFrame.add(lastUndoneButton);
         buttonFrame.add(backButton);
         buttonFrame.add(nextButton);
+        buttonFrame.add(undoneButton);
         buttonFrame.add(exitButton);
         
         add(dispFrame);
@@ -241,28 +261,30 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
     public static void main(String[] args) throws Exception {
     	Gate.init();
 		gate.Utils.loadPlugin("Format_FastInfoset");
+		File[] corpus = new File[0];
 		
     	if(args.length!=2){
     		System.out.println("Usage: simpleManualAnnotator <config> <corpusDir>");
 			System.exit(0);
     	} else {
-			corpusdir = new File(args[1]);
+			File corpusdir = new File(args[1]);
 			if(!corpusdir.isDirectory()){
 				System.err.println(corpusdir.getAbsolutePath() + " is not a directory!");
 				System.exit(0);
 			} else {
-				docsInDir = corpusdir.listFiles().length;
-				System.out.println("Annotating " + docsInDir + " documents from "
+				corpus = corpusdir.listFiles();
+				Arrays.sort(corpus);
+				System.out.println("Annotating " + corpus.length + " documents from "
 						+ corpusdir.getAbsolutePath());
 			}
     	}
     	
-    	if(docsInDir<1){
+    	if(corpus.length<1){
 			System.err.println("No documents to annotate!");
 			System.exit(0);
     	}
 
-    	SimpleManualAnnotator sma = new SimpleManualAnnotator(new File(args[0]));
+    	SimpleManualAnnotator sma = new SimpleManualAnnotator(new File(args[0]), corpus);
     	createAndShowGUI(sma);
     }
 
@@ -272,16 +294,20 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	}
 	
 	public void act(String what){		
-		if (back.equals(what)) {
-			prev();
+		if (backundone.equals(what)) {
+			prev(true);
+	    } else if (back.equals(what)) {
+			prev(false);
 	    } else if (next.equals(what)) {
-			next();
+			next(false);
+	    } else if (nextundone.equals(what)) {
+			next(true);
 	    } else if (saveandexit.equals(what)) {
 			saveDoc();
 			System.exit(0);
 	    } else {
 	    	int error = currentAnnotationTask.updateDocument(what);
-			if(error!=-1) next();
+			if(error!=-1) next(false);
 	    }
 		
 		redisplay();
@@ -290,16 +316,16 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         frame.requestFocusInWindow();
 	}
 	
-	public void next(){
+	public void updateToNext(boolean skipCompleteDocs){
 		//If we are initializing or on the last annotation we need a new doc
         if(currentDocIndex==-1 || currentAnnIndex==mentionsInDoc-1){
 			saveDoc();
         	int foundAnns = 0;
         	while(foundAnns==0){//Hunt for next doc with mentions
-	    		if(currentDocIndex<corpusdir.listFiles().length-1){
+	    		if(currentDocIndex<corpus.length-1){
 	    			if(currentDoc!=null) Factory.deleteResource(currentDoc);
 	    			this.currentDocIndex++;
-	    			File thisdoc = corpusdir.listFiles()[currentDocIndex];
+	    			File thisdoc = corpus[currentDocIndex];
 	    	   		try {
 	    	   			currentDoc = Factory.newDocument(thisdoc.toURI().toURL());
 	    	   		} catch (Exception e) {
@@ -311,7 +337,12 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	    	   		mentionList = currentDoc.getAnnotations(config.inputASName).get(config.mentionType).inDocumentOrder();
 	    	   		mentionsInDoc = mentionList.size();
 	    	   		currentAnnIndex = -1;
-	    	   		if(mentionsInDoc>0){
+	    	   		
+	    	        AnnotationSet doneAnns = currentDoc.getAnnotations(config.outputASName).get(config.mentionType);
+	    	   		boolean isComplete = false;
+	    	   		if(mentionList.size()==doneAnns.size()) isComplete = true;
+	    	   		
+	    	   		if((!skipCompleteDocs && mentionsInDoc>0) || (skipCompleteDocs && !isComplete && mentionsInDoc>0)){
 	    	   			foundAnns = 1; //Exit while loop, as we are happy with doc
 	    	   		}
 	    		} else {
@@ -327,7 +358,26 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         currentAnnotationTask = new AnnotationTask(toDisplay, config, currentDoc);
 	}
 	
-	public void prev(){
+	public void next(boolean undoneOnly){
+		if(!undoneOnly){
+			updateToNext(false);
+		} else {
+			int prevAnnIndex = currentAnnIndex;
+			updateToNext(true);
+	        AnnotationSet doneAnns = currentDoc.getAnnotations(config.outputASName).get(config.mentionType);
+			Annotation thisAnn = mentionList.get(currentAnnIndex);
+			AnnotationSet isitdone = Utils.getCoextensiveAnnotations(doneAnns, thisAnn);
+			while(isitdone.size()!=0 && currentAnnIndex!=prevAnnIndex){
+				prevAnnIndex = currentAnnIndex;
+				updateToNext(true);
+				doneAnns = currentDoc.getAnnotations(config.outputASName).get(config.mentionType);
+				thisAnn = mentionList.get(currentAnnIndex);
+				isitdone = Utils.getCoextensiveAnnotations(doneAnns, thisAnn);
+			}
+		}
+	}
+	
+	public void updateToPrev(boolean skipCompleteDocs){
 		if(currentAnnIndex<1){ //We need to move back a doc
 			saveDoc();
         	int foundAnns = 0;
@@ -335,7 +385,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	    		if(currentDocIndex>0){
 	    			if(currentDoc!=null) Factory.deleteResource(currentDoc);
 	    			this.currentDocIndex--;
-	    			File thisdoc = corpusdir.listFiles()[currentDocIndex];
+	    			File thisdoc = corpus[currentDocIndex];
 	    	   		try {
 	    	   			currentDoc = Factory.newDocument(thisdoc.toURI().toURL());
 	    	   		} catch (Exception e) {
@@ -347,7 +397,12 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	    	   		mentionList = currentDoc.getAnnotations(config.inputASName).get(config.mentionType).inDocumentOrder();
 	    	   		mentionsInDoc = mentionList.size();
 	    	   		currentAnnIndex = mentionsInDoc;
-	    	   		if(mentionsInDoc>0){
+	    	   		
+	    	        AnnotationSet doneAnns = currentDoc.getAnnotations(config.outputASName).get(config.mentionType);
+	    	   		boolean isComplete = false;
+	    	   		if(mentionList.size()==doneAnns.size()) isComplete = true;
+	    	   		
+	    	   		if((!skipCompleteDocs && mentionsInDoc>0) || (skipCompleteDocs && !isComplete && mentionsInDoc>0)){
 	    	   			foundAnns = 1; //Exit while loop, as we are happy with doc
 	    	   		}
 	    		} else {
@@ -361,6 +416,25 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         currentAnnIndex--;
         Annotation toDisplay = mentionList.get(currentAnnIndex);
         currentAnnotationTask = new AnnotationTask(toDisplay, config, currentDoc);
+	}
+
+	public void prev(boolean undoneOnly){
+		if(!undoneOnly){
+			updateToPrev(false);
+		} else {
+			int prevAnnIndex = currentAnnIndex;
+			updateToPrev(true);
+	        AnnotationSet doneAnns = currentDoc.getAnnotations(config.outputASName).get(config.mentionType);
+			Annotation thisAnn = mentionList.get(currentAnnIndex);
+			AnnotationSet isitdone = Utils.getCoextensiveAnnotations(doneAnns, thisAnn);
+			while(isitdone.size()==1 && currentAnnIndex!=prevAnnIndex){
+				prevAnnIndex = currentAnnIndex;
+				updateToPrev(true);
+				doneAnns = currentDoc.getAnnotations(config.outputASName).get(config.mentionType);
+				thisAnn = mentionList.get(currentAnnIndex);
+				isitdone = Utils.getCoextensiveAnnotations(doneAnns, thisAnn);
+			}
+		}
 	}
 	
 	private void redisplay(){
@@ -430,15 +504,15 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	}
 	
 	private String progressReport(){
-		return (currentDocIndex+1) + " of " + docsInDir + " docs, "
-    			+ (currentAnnIndex+1) + " of " + mentionsInDoc + " annotations.";
+		return (currentDocIndex+1) + " of " + corpus.length + " docs, "
+	    			+ (currentAnnIndex+1) + " of " + mentionsInDoc + " annotations.";
 	}
 	
 	private void saveDoc(){
 		if(currentDoc!=null){
 			FileWriter thisdocfile = null;
 			try {
-				thisdocfile = new FileWriter(corpusdir.listFiles()[currentDocIndex]);
+				thisdocfile = new FileWriter(corpus[currentDocIndex]);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -457,8 +531,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 					e.printStackTrace();
 				}
 			} else {
-				System.out.println("Failed to access file " + currentDocIndex
-						+ " in " + corpusdir.getAbsolutePath() + " for writing!");
+				System.out.println("Failed to access " + currentDoc.getName() + " for writing!");
 			}
 		}
 	}
