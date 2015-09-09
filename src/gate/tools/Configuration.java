@@ -20,6 +20,7 @@ public class Configuration {
 	String outputFeat = "class";
 	boolean includeNoneOfAbove = false;
 	boolean includeSpurious = true;
+	boolean autoadvance = true;
 
 	Configuration (File conf) {
 		populateConfigOptions(conf);
@@ -72,6 +73,10 @@ public class Configuration {
     	            case "includeSpurious":
     	            	includeSpurious = false;
     	            	if(pair[1].equals("true")) includeSpurious = true;
+	                    break;
+    	            case "autoadvance":
+    	            	autoadvance = true;
+    	            	if(pair[1].equals("false")) autoadvance = false;
 	                    break;
     	    	   }    	    			   
     	       }

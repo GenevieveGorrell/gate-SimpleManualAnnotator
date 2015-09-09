@@ -1,3 +1,5 @@
+autoadvance = true
+
 mode = OPTIONSFROMTYPEANDFEATURE
 inputASName = null
 contextType = Sentence

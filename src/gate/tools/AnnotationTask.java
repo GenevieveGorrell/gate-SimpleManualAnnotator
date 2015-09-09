@@ -132,12 +132,15 @@ public class AnnotationTask {
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.optionsFeat, AnnotationTask.spurious);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
+		    	this.indexOfSelected = AnnotationTask.SPURIOUS;
 		    } else if (AnnotationTask.noneofabove.equals(action) && config.includeNoneOfAbove) {
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.optionsFeat, AnnotationTask.noneofabove);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
+		    	this.indexOfSelected = AnnotationTask.NONEOFABOVE;
 		    } else if (AnnotationTask.undone.equals(action)) {
 		    	//Nothing to do, we already removed it
+		    	this.indexOfSelected = AnnotationTask.UNDONE;
 			} else { //We have a potential option
 		    	int opt = new Integer(action.substring(6)).intValue();
 		    	if(opt>=0 && opt<optionsObjects.length){
@@ -145,6 +148,7 @@ public class AnnotationTask {
 			    	FeatureMap fm = Factory.newFeatureMap();
 			    	fm.putAll(toAdd.getFeatures());
 			    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
+			    	this.indexOfSelected = opt;
 		    	} else {
 		    		System.out.println("Ignoring invalid option.");
 		    		return -1;
@@ -156,17 +160,21 @@ public class AnnotationTask {
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, AnnotationTask.spurious);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
+		    	this.indexOfSelected = AnnotationTask.SPURIOUS;
 		    } else if (AnnotationTask.noneofabove.equals(action)) {
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, AnnotationTask.noneofabove);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
+		    	this.indexOfSelected = AnnotationTask.NONEOFABOVE;
 		    } else if (AnnotationTask.undone.equals(action)) {
 		    	//Nothing to do, we already removed it
+		    	this.indexOfSelected = AnnotationTask.UNDONE;
 			} else { //We have an option
 		    	int opt = new Integer(action.substring(6)).intValue();
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, this.optionsObjects[opt]);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
+		    	this.indexOfSelected = opt;
 			}
 			break;
 		case OPTIONSFROMSTRING:
@@ -174,17 +182,21 @@ public class AnnotationTask {
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, AnnotationTask.spurious);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
+		    	this.indexOfSelected = AnnotationTask.SPURIOUS;
 		    } else if (AnnotationTask.noneofabove.equals(action)) {
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, AnnotationTask.noneofabove);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
+		    	this.indexOfSelected = AnnotationTask.NONEOFABOVE;
 		    } else if (AnnotationTask.undone.equals(action)) {
 		    	//Nothing to do, we already removed it
+		    	this.indexOfSelected = AnnotationTask.UNDONE;
 			} else { //We have an option
 		    	int opt = new Integer(action.substring(6)).intValue();
 		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, this.options[opt]);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
+		    	this.indexOfSelected = opt;
 			}
 			break;
 		}

@@ -307,7 +307,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 			System.exit(0);
 	    } else {
 	    	int error = currentAnnotationTask.updateDocument(what);
-			if(error!=-1) next(false);
+			if(error!=-1 && config.autoadvance) next(false);
 	    }
 		
 		redisplay();
@@ -461,7 +461,6 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         for(int i=0;i<currentAnnotationTask.options.length;i++){
 	        JRadioButton button = new JRadioButton(i+1 + ": " + currentAnnotationTask.options[i]);
 	        button.setActionCommand("option" + i);
-	        button.setSelected(true);
 	        optionGroup.add(button);
 	        button.addActionListener(this);
 	        if(currentAnnotationTask.indexOfSelected==i){
