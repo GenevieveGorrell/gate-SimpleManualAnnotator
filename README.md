@@ -50,7 +50,7 @@ This option indicates that choices are to be found on a separate annotation type
 
 To run, the annotator requires the GATE jar as well as the GATE lib directory so something like this should work:
 
-java -cp gate-SimpleManualAnnotator.jar:$GATE_HOME/bin/gate.jar:$GATE_HOME/lib/* gate.tools.SimpleManualAnnotator \<config file\> '<directory of GATE documents>'
+java -cp gate-SimpleManualAnnotator.jar:$GATE_HOME/bin/gate.jar:$GATE_HOME/lib/* gate.tools.SimpleManualAnnotator \<config file&gt; '<directory of GATE documents>'
 
 A shell script is provided with the distribution.
 
