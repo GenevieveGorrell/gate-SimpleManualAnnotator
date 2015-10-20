@@ -8,8 +8,11 @@ import gate.FeatureMap;
 import gate.Gate;
 import gate.Utils;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.ScrollPane;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,7 +43,10 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.border.Border;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
 
@@ -71,6 +77,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	JEditorPane display = new JEditorPane();
     ButtonGroup optionGroup = new ButtonGroup();
 	JPanel optionsFrame = new JPanel();
+    JTextField note = new JTextField(10);
 	
 	//Set at init
 	File[] corpus;
@@ -92,7 +99,6 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
     	
     	JPanel dispFrame = new JPanel();
     	dispFrame.setLayout(new BoxLayout(dispFrame, BoxLayout.Y_AXIS));
-    	dispFrame.setAlignmentX(JComponent.CENTER_ALIGNMENT);
     	dispFrame.setBackground(Color.WHITE);
     	
     	progress = new JLabel();
@@ -102,7 +108,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 
     	display.setEditable(false);
     	display.setContentType("text/html");
-    	display.setPreferredSize(new Dimension(250, 145));
+    	display.setPreferredSize(new Dimension(250, 120));
     	display.setMinimumSize(new Dimension(10, 10));
     	display.setBackground(new Color(0.94F, 0.94F, 0.94F));
     	display.setBorder(BorderFactory.createCompoundBorder(
@@ -110,9 +116,27 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
     			BorderFactory.createLoweredBevelBorder()));
         dispFrame.add(display);
 
+        JPanel optionsContainer = new JPanel(new BorderLayout());
+        optionsContainer.setBorder(BorderFactory.createMatteBorder(0,25,0,0, Color.WHITE));
+        optionsContainer.setBackground(Color.WHITE);
     	optionsFrame.setLayout(new BoxLayout(optionsFrame, BoxLayout.Y_AXIS));
     	optionsFrame.setBackground(Color.WHITE);
-        dispFrame.add(optionsFrame);
+    	optionsContainer.add(optionsFrame, BorderLayout.WEST);
+        dispFrame.add(optionsContainer);
+
+    	JPanel noteFrame = new JPanel();
+    	noteFrame.setLayout(new BoxLayout(noteFrame, BoxLayout.LINE_AXIS));
+    	noteFrame.setPreferredSize(new Dimension(250, 47));
+    	noteFrame.setBorder(BorderFactory.createMatteBorder(10,10,10,10, Color.WHITE));
+    	noteFrame.setBackground(Color.WHITE);
+    	JLabel noteLabel = new JLabel();
+    	noteLabel.setText("Note: ");
+    	noteFrame.add(noteLabel);
+    	ScrollPane sp = new ScrollPane();
+    	sp.add(note);
+    	note.setBackground(new Color(0.94F, 0.94F, 0.94F));
+    	noteFrame.add(sp);
+        dispFrame.add(noteFrame);
         
         redisplay();
     	
@@ -293,7 +317,12 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 		act(ev.getActionCommand());
 	}
 	
-	public void act(String what){		
+	public void act(String what){
+		if(!this.note.getText().equals(currentAnnotationTask.note)){
+			//Note has changed, so if it's a none of above, we should write it
+			currentAnnotationTask.updateNote(this.note.getText());
+		}
+    	
 		if (backundone.equals(what)) {
 			prev(true);
 	    } else if (back.equals(what)) {
@@ -452,6 +481,8 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
     	htmlStr = htmlStr + currentAnnotationTask.context.substring(end, currentAnnotationTask.context.length());
     	display.setText(htmlStr);
 
+        note.setText(currentAnnotationTask.note);
+
     	//Remove any existing radio buttons from optionsFrame
     	while(optionsFrame.getComponentCount()>0){
     		optionsFrame.remove(optionsFrame.getComponentCount()-1);
@@ -465,6 +496,9 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	        button.addActionListener(this);
 	        if(currentAnnotationTask.indexOfSelected==i){
 	        	button.setSelected(true);
+		    	this.note.setBackground(Color.WHITE);
+		    	this.note.setEditable(true);
+		    	this.note.setText(currentAnnotationTask.note);
 	        }
 	        button.setBackground(new Color(0.99F, 0.95F, 0.99F));
 	        optionsFrame.add(button);
@@ -476,6 +510,9 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	        button.addActionListener(this);
 	        if(currentAnnotationTask.indexOfSelected==AnnotationTask.NONEOFABOVE){
 	        	button.setSelected(true);
+		    	this.note.setBackground(Color.WHITE);
+		    	this.note.setEditable(true);
+		    	this.note.setText(currentAnnotationTask.note);
 	        }
 	        button.setBackground(new Color(0.99F, 0.95F, 0.99F));
 	        optionsFrame.add(button);
@@ -487,6 +524,9 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	        button.addActionListener(this);
 	        if(currentAnnotationTask.indexOfSelected==AnnotationTask.SPURIOUS){
 	        	button.setSelected(true);
+		    	this.note.setBackground(Color.WHITE);
+		    	this.note.setEditable(true);
+		    	this.note.setText(currentAnnotationTask.note);
 	        }
 	        button.setBackground(new Color(0.99F, 0.95F, 0.99F));
 	        optionsFrame.add(button);
@@ -497,6 +537,9 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         button.addActionListener(this);
         if(currentAnnotationTask.indexOfSelected==AnnotationTask.UNDONE){
         	button.setSelected(true);
+	    	this.note.setBackground(Color.LIGHT_GRAY);
+	    	this.note.setText("");
+	    	this.note.setEditable(false);
         }
         button.setBackground(Color.WHITE);
         optionsFrame.add(button);

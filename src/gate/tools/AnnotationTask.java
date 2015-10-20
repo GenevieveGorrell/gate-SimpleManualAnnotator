@@ -21,6 +21,8 @@ public class AnnotationTask {
 	static String spurious = "<SPURIOUS>";
 	static String undone = "<NOT DONE>";
 	
+	static String noteType = "annotation-note";
+	
 	private Document currentDoc;
 	private Configuration config;
 	
@@ -33,6 +35,7 @@ public class AnnotationTask {
 	Object[] optionsObjects;
 	Annotation previouslySelected = null;
 	int indexOfSelected = UNDONE;
+	String note;
 		
 	AnnotationTask(Annotation thisAnn, Configuration config, Document currentDoc){
 		this.config = config;
@@ -44,6 +47,11 @@ public class AnnotationTask {
 		
 		if(previous.size()==1){
 			previouslySelected = Utils.getOnlyAnn(previous);
+
+			if(previouslySelected.getFeatures().get(noteType)!=null){
+				note = previouslySelected.getFeatures().get(noteType).toString();
+			}
+			
 			if(config.mode==SimpleManualAnnotator.Mode.OPTIONSFROMTYPEANDFEATURE){
 				prev = previouslySelected.getFeatures().get(config.optionsFeat);
 			} else {
@@ -125,16 +133,16 @@ public class AnnotationTask {
     	}
     	//To be sure ..
     	outputAS.removeAll(Utils.getCoextensiveAnnotations(outputAS, mention));
+
+    	FeatureMap fm = Factory.newFeatureMap();
     	
 		switch (config.mode) {
 		case OPTIONSFROMTYPEANDFEATURE:
 		    if (AnnotationTask.spurious.equals(action) && config.includeSpurious) {
-		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.optionsFeat, AnnotationTask.spurious);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
 		    	this.indexOfSelected = AnnotationTask.SPURIOUS;
 		    } else if (AnnotationTask.noneofabove.equals(action) && config.includeNoneOfAbove) {
-		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.optionsFeat, AnnotationTask.noneofabove);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
 		    	this.indexOfSelected = AnnotationTask.NONEOFABOVE;
@@ -145,7 +153,6 @@ public class AnnotationTask {
 		    	int opt = new Integer(action.substring(6)).intValue();
 		    	if(opt>=0 && opt<optionsObjects.length){
 		    		Annotation toAdd = (Annotation)optionsObjects[opt];
-			    	FeatureMap fm = Factory.newFeatureMap();
 			    	fm.putAll(toAdd.getFeatures());
 			    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
 			    	this.indexOfSelected = opt;
@@ -157,13 +164,12 @@ public class AnnotationTask {
 			break;
 		case OPTIONSFROMFEATURE:
 		    if (AnnotationTask.spurious.equals(action)) {
-		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, AnnotationTask.spurious);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
 		    	this.indexOfSelected = AnnotationTask.SPURIOUS;
 		    } else if (AnnotationTask.noneofabove.equals(action)) {
-		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, AnnotationTask.noneofabove);
+		    	fm.put(noteType, this.note);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
 		    	this.indexOfSelected = AnnotationTask.NONEOFABOVE;
 		    } else if (AnnotationTask.undone.equals(action)) {
@@ -171,7 +177,6 @@ public class AnnotationTask {
 		    	this.indexOfSelected = AnnotationTask.UNDONE;
 			} else { //We have an option
 		    	int opt = new Integer(action.substring(6)).intValue();
-		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, this.optionsObjects[opt]);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
 		    	this.indexOfSelected = opt;
@@ -179,13 +184,12 @@ public class AnnotationTask {
 			break;
 		case OPTIONSFROMSTRING:
 		    if (AnnotationTask.spurious.equals(action)) {
-		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, AnnotationTask.spurious);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
 		    	this.indexOfSelected = AnnotationTask.SPURIOUS;
 		    } else if (AnnotationTask.noneofabove.equals(action)) {
-		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, AnnotationTask.noneofabove);
+		    	fm.put(noteType, this.note);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
 		    	this.indexOfSelected = AnnotationTask.NONEOFABOVE;
 		    } else if (AnnotationTask.undone.equals(action)) {
@@ -193,7 +197,6 @@ public class AnnotationTask {
 		    	this.indexOfSelected = AnnotationTask.UNDONE;
 			} else { //We have an option
 		    	int opt = new Integer(action.substring(6)).intValue();
-		    	FeatureMap fm = Factory.newFeatureMap();
 		    	fm.put(config.outputFeat, this.options[opt]);
 		    	Utils.addAnn(outputAS, mention, config.mentionType, fm);
 		    	this.indexOfSelected = opt;
@@ -201,5 +204,15 @@ public class AnnotationTask {
 			break;
 		}
 		return 1;
+	}
+	
+	public void updateNote(String note){
+		this.note = note;
+		AnnotationSet outputAS = currentDoc.getAnnotations(config.outputASName);
+    	AnnotationSet anns = Utils.getCoextensiveAnnotations(outputAS, mention);
+    	if(anns.size()>0){
+    		Annotation ann = anns.iterator().next();
+    		ann.getFeatures().put(noteType, this.note);
+    	}
 	}
 }
