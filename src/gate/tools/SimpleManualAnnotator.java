@@ -473,7 +473,11 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
     	progress.setText(progressReport());
     	
     	int start = new Long(currentAnnotationTask.startOfMention-currentAnnotationTask.offset).intValue();
+    	if(start<0) start=0;
+    	
     	int end = new Long(currentAnnotationTask.endOfMention-currentAnnotationTask.offset).intValue();
+    	if(end>currentAnnotationTask.context.length()) end=currentAnnotationTask.context.length();
+    	
     	String htmlStr = currentAnnotationTask.context.substring(0, start);
     	htmlStr = htmlStr + "<b><span style=\"background-color:#66CDAA\">";
     	htmlStr = htmlStr + currentAnnotationTask.context.substring(start, end);

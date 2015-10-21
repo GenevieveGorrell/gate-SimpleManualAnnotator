@@ -73,7 +73,7 @@ public class AnnotationTask {
 		//Context
 		Annotation contextAnn = Utils.getOverlappingAnnotations(
 				inputAS, thisAnn, config.contextType).iterator().next();
-		context = Utils.cleanStringFor(currentDoc, contextAnn);
+		context = Utils.stringFor(currentDoc, contextAnn);
 		offset = contextAnn.getStartNode().getOffset();
 		startOfMention = thisAnn.getStartNode().getOffset();
 		endOfMention = thisAnn.getEndNode().getOffset();
