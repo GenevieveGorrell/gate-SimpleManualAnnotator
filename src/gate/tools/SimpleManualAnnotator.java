@@ -22,7 +22,9 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -84,6 +86,10 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	Configuration config;
 	
 	//Globals for corpus navigation
+	File outputDir;
+	String csvFile;
+	long timeStart;
+	long timeEnd;
 	Document currentDoc;
 	List<Annotation> mentionList;
 	int currentDocIndex = -1;
@@ -92,7 +98,9 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	AnnotationTask currentAnnotationTask;
 
 	
-    public SimpleManualAnnotator(File conf, File[] corpus) {
+    public SimpleManualAnnotator(File conf, File[] corpus, File outputDir, String csvFile) {
+    	this.outputDir=outputDir;
+    	this.csvFile=csvFile;
 		config = new Configuration(conf);
 		this.corpus = corpus;
 		next(true);
@@ -286,8 +294,10 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
     	Gate.init();
 		gate.Utils.loadPlugin("Format_FastInfoset");
 		File[] corpus = new File[0];
+		File annoDoneDir=new File(args[2]);
+		String annoCsvFile = args[3];
 		
-    	if(args.length!=2){
+    	if(args.length<2){
     		System.out.println("Usage: simpleManualAnnotator <config> <corpusDir>");
 			System.exit(0);
     	} else {
@@ -308,7 +318,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 			System.exit(0);
     	}
 
-    	SimpleManualAnnotator sma = new SimpleManualAnnotator(new File(args[0]), corpus);
+    	SimpleManualAnnotator sma = new SimpleManualAnnotator(new File(args[0]), corpus, annoDoneDir, annoCsvFile);
     	createAndShowGUI(sma);
     }
 
@@ -355,6 +365,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	    			if(currentDoc!=null) Factory.deleteResource(currentDoc);
 	    			this.currentDocIndex++;
 	    			File thisdoc = corpus[currentDocIndex];
+	    			timeStart=System.currentTimeMillis();
 	    	   		try {
 	    	   			currentDoc = Factory.newDocument(thisdoc.toURI().toURL());
 	    	   		} catch (Exception e) {
@@ -555,10 +566,19 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	}
 	
 	private void saveDoc(){
+		//System.out.println(outputDir);
+		//System.out.println(csvFile);
 		if(currentDoc!=null){
 			FileWriter thisdocfile = null;
 			try {
+				System.out.println(corpus[currentDocIndex].getPath());
+				timeEnd=System.currentTimeMillis();
+				System.out.println(timeStart);
+				System.out.println(timeEnd);
+				long timeDiff=(timeEnd-timeStart)/1000;
+				System.out.println(timeDiff);
 				thisdocfile = new FileWriter(corpus[currentDocIndex]);
+				updateCSV(timeDiff, corpus[currentDocIndex].getPath());
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -579,6 +599,48 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 			} else {
 				System.out.println("Failed to access " + currentDoc.getName() + " for writing!");
 			}
+		}
+	}
+	private void updateCSV(long timeUsed, String FileName){
+		String tmpCSVfileName="tmpcsv.csv";
+		String outLine;
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(csvFile));
+			BufferedWriter bw = new BufferedWriter(new FileWriter(tmpCSVfileName));
+			String csvSplitBy = "\t";
+			String line;
+			Boolean docExisted=false;
+			while ((line = br.readLine()) != null) {
+				String[] csvLine = line.split(csvSplitBy);
+				String docId=csvLine[0];
+				long docTime=Long.parseLong(csvLine[1]);
+				if (docId.matches(FileName)){
+					timeUsed=timeUsed+docTime;
+					docExisted=true;
+					outLine=docId+"\t"+Long.toString(timeUsed);
+					System.out.println(outLine);
+					bw.write(outLine+"\n");
+				}
+				else{
+					bw.write(line+"\n");
+				}
+			}
+			if (docExisted==false){
+				outLine=FileName+"\t"+Long.toString(timeUsed);
+				System.out.println(outLine);
+				bw.write(outLine+"\n");
+			}
+			File backupFile= new File("backup.csv");
+			File oldFile = new File(csvFile);
+			oldFile.renameTo(backupFile);
+			File newFile = new File(tmpCSVfileName);
+			newFile.renameTo(oldFile);
+			br.close();
+			bw.close();
+
+		}catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }
