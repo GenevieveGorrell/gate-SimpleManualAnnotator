@@ -28,6 +28,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -602,11 +603,12 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 		}
 	}
 	private void updateCSV(long timeUsed, String FileName){
-		String tmpCSVfileName="tmpcsv.csv";
+		//String tmpCSVfileName="tmpcsv.csv";
 		String outLine;
+		List<String> csvLines = new ArrayList<String>();
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(csvFile));
-			BufferedWriter bw = new BufferedWriter(new FileWriter(tmpCSVfileName));
+			//BufferedWriter bw = new BufferedWriter(new FileWriter(tmpCSVfileName,false));
 			String csvSplitBy = "\t";
 			String line;
 			Boolean docExisted=false;
@@ -614,29 +616,45 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 				String[] csvLine = line.split(csvSplitBy);
 				String docId=csvLine[0];
 				long docTime=Long.parseLong(csvLine[1]);
-				if (docId.matches(FileName)){
+				System.out.println(FileName+' '+docId);
+				if (docId.trim().equals(FileName.trim())){
+					System.out.println("find existed file");
 					timeUsed=timeUsed+docTime;
 					docExisted=true;
 					outLine=docId+"\t"+Long.toString(timeUsed);
 					System.out.println(outLine);
-					bw.write(outLine+"\n");
+					csvLines.add(outLine);
+					//bw.write(outLine+"\r\n");
 				}
 				else{
-					bw.write(line+"\n");
+					csvLines.add(line);
+					//bw.write(line+"\r\n");
 				}
 			}
 			if (docExisted==false){
 				outLine=FileName+"\t"+Long.toString(timeUsed);
 				System.out.println(outLine);
-				bw.write(outLine+"\n");
+				csvLines.add(outLine);
+				//bw.write(outLine+"\r\n");
 			}
-			File backupFile= new File("backup.csv");
-			File oldFile = new File(csvFile);
-			oldFile.renameTo(backupFile);
-			File newFile = new File(tmpCSVfileName);
-			newFile.renameTo(oldFile);
 			br.close();
-			bw.close();
+			//bw.close();
+			//BufferedReader bro = new BufferedReader(new FileReader(tmpCSVfileName));
+			BufferedWriter bwo = new BufferedWriter(new FileWriter(csvFile,false));
+			for(String savedLine:csvLines) {
+				bwo.write(savedLine+"\r\n");
+			}
+			//bro.close();
+			bwo.close();
+			
+			
+			
+			//File backupFile= new File("backup.csv");
+			//File oldFile = new File(csvFile);
+			//oldFile.renameTo(backupFile);
+			//File newFile = new File(tmpCSVfileName);
+			//newFile.renameTo(oldFile);
+			
 
 		}catch (IOException e) {
 			// TODO Auto-generated catch block
