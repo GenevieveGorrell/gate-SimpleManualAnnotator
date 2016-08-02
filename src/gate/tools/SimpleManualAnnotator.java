@@ -98,8 +98,8 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	AnnotationTask currentAnnotationTask;
 
 	
-    public SimpleManualAnnotator(File conf, File[] corpus, File outputDir, String csvFile) {
-    	this.outputDir=outputDir;
+    public SimpleManualAnnotator(File conf, File[] corpus, String csvFile) {
+    	//this.outputDir=outputDir;
     	this.csvFile=csvFile;
 		config = new Configuration(conf);
 		this.corpus = corpus;
@@ -294,8 +294,8 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
     	Gate.init();
 		gate.Utils.loadPlugin("Format_FastInfoset");
 		File[] corpus = new File[0];
-		File annoDoneDir=new File(args[2]);
-		String annoCsvFile = args[3];
+		//File annoDoneDir=new File(args[2]);
+		String annoCsvFile = args[2];
 		
     	if(args.length<2){
     		System.out.println("Usage: simpleManualAnnotator <config> <corpusDir>");
@@ -318,7 +318,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 			System.exit(0);
     	}
 
-    	SimpleManualAnnotator sma = new SimpleManualAnnotator(new File(args[0]), corpus, annoDoneDir, annoCsvFile);
+    	SimpleManualAnnotator sma = new SimpleManualAnnotator(new File(args[0]), corpus, annoCsvFile);
     	createAndShowGUI(sma);
     }
 
