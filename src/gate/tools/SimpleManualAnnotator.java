@@ -627,7 +627,8 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 					//bw.write(outLine+"\r\n");
 				}
 				else{
-					csvLines.add(line);
+					outLine=line;
+					csvLines.add(outLine);
 					//bw.write(line+"\r\n");
 				}
 			}
@@ -647,7 +648,14 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 			//bro.close();
 			bwo.close();
 			
-			
+			List<Annotation> fmentionList = currentDoc.getAnnotations(config.inputASName).get(config.mentionType).inDocumentOrder();
+			AnnotationSet fdoneAnns = currentDoc.getAnnotations(config.outputASName).get(config.mentionType);
+			System.out.println(fmentionList.size());
+			System.out.println(fdoneAnns.size());
+			boolean finalComplete = false;
+	   		if(fmentionList.size()==fdoneAnns.size()) finalComplete = true;
+	   		System.out.println(finalComplete);
+	   		
 			
 			//File backupFile= new File("backup.csv");
 			//File oldFile = new File(csvFile);
