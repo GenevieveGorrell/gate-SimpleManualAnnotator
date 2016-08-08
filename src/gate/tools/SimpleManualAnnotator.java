@@ -607,6 +607,15 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 		String outLine;
 		List<String> csvLines = new ArrayList<String>();
 		try {
+			List<Annotation> fmentionList = currentDoc.getAnnotations(config.inputASName).get(config.mentionType).inDocumentOrder();
+			AnnotationSet fdoneAnns = currentDoc.getAnnotations(config.outputASName).get(config.mentionType);
+			System.out.println(fmentionList.size());
+			System.out.println(fdoneAnns.size());
+			boolean finalComplete = false;
+	   		if(fmentionList.size()==fdoneAnns.size()) finalComplete = true;
+	   		System.out.println(finalComplete);
+
+			
 			BufferedReader br = new BufferedReader(new FileReader(csvFile));
 			//BufferedWriter bw = new BufferedWriter(new FileWriter(tmpCSVfileName,false));
 			String csvSplitBy = "\t";
@@ -622,6 +631,9 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 					timeUsed=timeUsed+docTime;
 					docExisted=true;
 					outLine=docId+"\t"+Long.toString(timeUsed);
+					if (finalComplete == true){
+						outLine=outLine+"\t"+"completed";
+					}
 					System.out.println(outLine);
 					csvLines.add(outLine);
 					//bw.write(outLine+"\r\n");
@@ -635,6 +647,9 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 			if (docExisted==false){
 				outLine=FileName+"\t"+Long.toString(timeUsed);
 				System.out.println(outLine);
+				if (finalComplete == true){
+					outLine=outLine+"\t"+"completed";
+				}
 				csvLines.add(outLine);
 				//bw.write(outLine+"\r\n");
 			}
@@ -648,13 +663,6 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 			//bro.close();
 			bwo.close();
 			
-			List<Annotation> fmentionList = currentDoc.getAnnotations(config.inputASName).get(config.mentionType).inDocumentOrder();
-			AnnotationSet fdoneAnns = currentDoc.getAnnotations(config.outputASName).get(config.mentionType);
-			System.out.println(fmentionList.size());
-			System.out.println(fdoneAnns.size());
-			boolean finalComplete = false;
-	   		if(fmentionList.size()==fdoneAnns.size()) finalComplete = true;
-	   		System.out.println(finalComplete);
 	   		
 			
 			//File backupFile= new File("backup.csv");
