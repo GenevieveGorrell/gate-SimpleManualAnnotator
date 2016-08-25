@@ -21,6 +21,8 @@ public class Configuration {
 	boolean includeNoneOfAbove = false;
 	boolean includeSpurious = true;
 	boolean autoadvance = true;
+	boolean compare = true;
+    String compareAS = null;
 
 	Configuration (File conf) {
 		populateConfigOptions(conf);
@@ -77,6 +79,14 @@ public class Configuration {
     	            case "autoadvance":
     	            	autoadvance = true;
     	            	if(pair[1].equals("false")) autoadvance = false;
+	                    break;
+    	            case "compare":
+    	            	compare = true;
+    	            	if(pair[1].equals("false")) compare = false;
+	                    break;
+    	            case "compareAS":
+    	            	compareAS = pair[1];
+    	            	if(compareAS.equals("null")) inputASName = null;
 	                    break;
     	    	   }    	    			   
     	       }

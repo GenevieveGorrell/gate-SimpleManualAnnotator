@@ -6,9 +6,11 @@ contextType = Sentence
 mentionType = LookupList
 optionsType = MetaMap
 optionsFeat = PreferredName
-outputASName = Key
+outputASName = Xingyi
 includeNoneOfAbove = true
 includeSpurious = true
+compare = true
+compareAS = Key
 
 #mode = OPTIONSFROMFEATURE
 #inputASName = null

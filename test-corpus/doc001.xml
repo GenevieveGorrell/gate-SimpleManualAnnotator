@@ -27316,4 +27316,3133 @@
 </Annotation>
 </AnnotationSet>
 
+<!-- Named annotation set -->
+
+<AnnotationSet Name="Xingyi">
+<Annotation Id="8284" Type="LookupList" StartNode="28" EndNode="34">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8285" Type="LookupList" StartNode="35" EndNode="39">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;SPURIOUS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8286" Type="LookupList" StartNode="44" EndNode="48">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8287" Type="LookupList" StartNode="55" EndNode="58">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8288" Type="LookupList" StartNode="61" EndNode="66">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8289" Type="LookupList" StartNode="67" EndNode="73">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8290" Type="LookupList" StartNode="105" EndNode="111">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8291" Type="LookupList" StartNode="162" EndNode="164">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8292" Type="LookupList" StartNode="175" EndNode="187">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8293" Type="LookupList" StartNode="196" EndNode="203">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8294" Type="LookupList" StartNode="204" EndNode="212">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8295" Type="LookupList" StartNode="217" EndNode="225">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-928</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">phpr</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CSP]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">nitration</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">nitration</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CSP]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1328815</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[phpr]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8296" Type="LookupList" StartNode="226" EndNode="234">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8297" Type="LookupList" StartNode="235" EndNode="240">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8298" Type="LookupList" StartNode="257" EndNode="270">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8299" Type="LookupList" StartNode="277" EndNode="285">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8300" Type="LookupList" StartNode="286" EndNode="293">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8301" Type="LookupList" StartNode="353" EndNode="356">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8302" Type="LookupList" StartNode="357" EndNode="368">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8303" Type="LookupList" StartNode="369" EndNode="374">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">bodm</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI, NLMSubSyn, RXNORM]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Solid</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Solid Dose Form</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI, NLMSubSyn, RXNORM]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1378566</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[bodm]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8304" Type="LookupList" StartNode="387" EndNode="391">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">ftcn</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Form</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Formation</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1522492</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[ftcn]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8305" Type="LookupList" StartNode="395" EndNode="401">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8306" Type="LookupList" StartNode="405" EndNode="411">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8307" Type="LookupList" StartNode="418" EndNode="425">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8308" Type="LookupList" StartNode="426" EndNode="431">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">qnco</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">point</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Point Name</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C2347617</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[qnco]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8309" Type="LookupList" StartNode="448" EndNode="455">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-966</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">inpr</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[HL7V2.5, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Boil</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Specimen Source Codes - Boil</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[HL7V2.5, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1546559</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[inpr]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8310" Type="LookupList" StartNode="456" EndNode="461">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">qnco</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[FMA, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Point</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">point - UnitsOfMeasure</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[FMA, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1552961</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[qnco]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8311" Type="LookupList" StartNode="479" EndNode="484">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">qnco</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[AOD]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">polar</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">polar</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[AOD]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0813983</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[qnco]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8312" Type="LookupList" StartNode="489" EndNode="500">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">qlco</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MSH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Hydrophobic</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Hydrophobicity</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MSH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0598629</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[qlco]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8313" Type="LookupList" StartNode="528" EndNode="532">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">fndg</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">used</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Used by</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1273517</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[fndg]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8314" Type="LookupList" StartNode="538" EndNode="548">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">sbst</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[HL7V3.0, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">stabilizer</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">stabilizer - ingredient</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[HL7V3.0, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1550603</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[sbst]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8315" Type="LookupList" StartNode="553" EndNode="562">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">acty</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">synthetic</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Synthesis</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1883254</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[acty]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8316" Type="LookupList" StartNode="563" EndNode="570">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">orch</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, MSH, MTH, NLMSubSyn, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">rubbers</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Rubber</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, MSH, MTH, NLMSubSyn, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0035918</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[orch]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8317" Type="LookupList" StartNode="573" EndNode="583">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">chvf</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MSH, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Explosives</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Explosive Agents</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MSH, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1721090</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[chvf]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8318" Type="LookupList" StartNode="586" EndNode="597">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">chvf</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, CSP]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">propellants</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">propellant</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, CSP]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0599677</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[chvf]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8319" Type="LookupList" StartNode="612" EndNode="616">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8320" Type="LookupList" StartNode="622" EndNode="631">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">orch;phsu</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MSH, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Smokeless</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Smokeless</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MSH, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1450035</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[orch, phsu]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8321" Type="LookupList" StartNode="632" EndNode="639">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">bodm</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, HL7V3.0, MSH, MTH, NCI, NLMSubSyn, RXNORM, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Powders</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Powder dose form</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, HL7V3.0, MSH, MTH, NCI, NLMSubSyn, RXNORM, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0032861</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[bodm]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8322" Type="LookupList" StartNode="653" EndNode="657">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">orgt</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[AOD, LCH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">army</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">army</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[AOD, LCH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0680778</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[orgt]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8323" Type="LookupList" StartNode="670" EndNode="681">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">chvf</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, CSP]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">propellants</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">propellant</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, CSP]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0599677</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[chvf]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8324" Type="LookupList" StartNode="685" EndNode="690">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">bodm</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI, NLMSubSyn, RXNORM]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Solid</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Solid Dose Form</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI, NLMSubSyn, RXNORM]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1378566</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[bodm]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8325" Type="LookupList" StartNode="714" EndNode="726">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">hlca</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">applications</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Application procedure</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0185125</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[hlca]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8326" Type="LookupList" StartNode="727" EndNode="736">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">ftcn</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[SNMI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Involving</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Involvement with</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[SNMI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1314939</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[ftcn]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8327" Type="LookupList" StartNode="744" EndNode="748">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">chem</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Acid</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Acids</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0001128</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[chem]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8328" Type="LookupList" StartNode="749" EndNode="755">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">orch</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MSH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Esters</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Esters</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MSH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0014898</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[orch]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8329" Type="LookupList" StartNode="758" EndNode="766">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">sbst</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MSH, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Plastics</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Plastics</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MSH, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0032167</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[sbst]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8330" Type="LookupList" StartNode="773" EndNode="783">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">sbst</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MSH, MTH, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Lubricants</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Lubricants</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MSH, MTH, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0282222</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[sbst]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8331" Type="LookupList" StartNode="800" EndNode="812">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">idcn</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[HL7V3.0, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">intermediate</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Observation Interpretation - intermediate</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[HL7V3.0, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1550465</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[idcn]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8332" Type="LookupList" StartNode="817" EndNode="824">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">qlco</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Organic</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Organic</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0747055</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[qlco]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8333" Type="LookupList" StartNode="825" EndNode="834">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">biof</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[GO, MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">synthesis</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Anabolism</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[GO, MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0220781</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[biof]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8334" Type="LookupList" StartNode="842" EndNode="850">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">popg</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[AOD, CHV]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">civilian</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">civilian</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[AOD, CHV]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0680413</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[popg]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8335" Type="LookupList" StartNode="851" EndNode="858">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">irda</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Solvent</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Solvents</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0037638</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[irda]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8336" Type="LookupList" StartNode="859" EndNode="862">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">irda</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, MTH, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Dye</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Dyes</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, MTH, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0013343</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[irda]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8337" Type="LookupList" StartNode="874" EndNode="884">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">mnob</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, MTH, SNMI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">explosives</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Explosive device</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, MTH, SNMI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0015330</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[mnob]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8338" Type="LookupList" StartNode="892" EndNode="896">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8339" Type="LookupList" StartNode="900" EndNode="907">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">qlco</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MSH, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">control</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">control aspects</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MSH, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0243148</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[qlco]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8340" Type="LookupList" StartNode="912" EndNode="921">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">phpr</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MSH, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Explosion</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Explosion</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MSH, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0015329</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[phpr]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8341" Type="LookupList" StartNode="923" EndNode="926">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8342" Type="LookupList" StartNode="934" EndNode="939">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8343" Type="LookupList" StartNode="940" EndNode="944">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8344" Type="LookupList" StartNode="951" EndNode="958">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">sbst</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[HL7V2.5, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Control</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">control substance</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[HL7V2.5, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1550141</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[sbst]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8345" Type="LookupList" StartNode="963" EndNode="972">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">phpr</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MSH, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Explosion</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Explosion</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MSH, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0015329</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[phpr]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8346" Type="LookupList" StartNode="973" EndNode="977">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">qnco</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Rate</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Rate</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1521828</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[qnco]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8347" Type="LookupList" StartNode="981" EndNode="990">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8348" Type="LookupList" StartNode="991" EndNode="997">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">orch</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Glycol</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Glycols</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0017951</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[orch]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8349" Type="LookupList" StartNode="1016" EndNode="1026">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">ortf</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, MTH, UWDA]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Stabilizer</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Stabilizer - function</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, MTH, UWDA]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0920880</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[ortf]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8350" Type="LookupList" StartNode="1032" EndNode="1037">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8351" Type="LookupList" StartNode="1038" EndNode="1042">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">cnce</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Role</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Generic Role</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1705810</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[cnce]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8352" Type="LookupList" StartNode="1063" EndNode="1069">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8353" Type="LookupList" StartNode="1070" EndNode="1078">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">inch</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Nitrate</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Nitrate</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0699857</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[inch]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8354" Type="LookupList" StartNode="1083" EndNode="1091">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">hcpp</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[HL7V3.0, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">nitrogen</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Nitrogen Handling</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[HL7V3.0, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1550581</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[hcpp]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8355" Type="LookupList" StartNode="1092" EndNode="1098">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8356" Type="LookupList" StartNode="1111" EndNode="1118">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8357" Type="LookupList" StartNode="1143" EndNode="1147">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">chem</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Acid</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Acids</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0001128</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[chem]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8358" Type="LookupList" StartNode="1148" EndNode="1154">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8359" Type="LookupList" StartNode="1191" EndNode="1198">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8360" Type="LookupList" StartNode="1218" EndNode="1224">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8361" Type="LookupList" StartNode="1248" EndNode="1255">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8362" Type="LookupList" StartNode="1257" EndNode="1263">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-966</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">inpr</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">HIGH</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Value Above Reference Range</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C2700149</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[inpr]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8363" Type="LookupList" StartNode="1264" EndNode="1271">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8364" Type="LookupList" StartNode="1292" EndNode="1302">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8365" Type="LookupList" StartNode="1305" EndNode="1314">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8366" Type="LookupList" StartNode="1315" EndNode="1325">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">ftcn</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">properties</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Has property</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1292721</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[ftcn]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8367" Type="LookupList" StartNode="1331" EndNode="1337">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8368" Type="LookupList" StartNode="1345" EndNode="1355">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">ortf</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, MTH, UWDA]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Stabilizer</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Stabilizer - function</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, MTH, UWDA]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0920880</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[ortf]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8369" Type="LookupList" StartNode="1356" EndNode="1364">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-944</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">acty</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Emptying</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Emptying</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1996907</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[acty]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8370" Type="LookupList" StartNode="1370" EndNode="1374">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">tmco</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Time</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Time (foundation metadata concept)</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C3541383</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[tmco]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8371" Type="LookupList" StartNode="1376" EndNode="1385">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8372" Type="LookupList" StartNode="1386" EndNode="1393">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">cnce</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Content</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Contents</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0456205</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[cnce]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8373" Type="LookupList" StartNode="1397" EndNode="1401">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">qlco</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Less</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Smaller</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0547044</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[qlco]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8374" Type="LookupList" StartNode="1418" EndNode="1425">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">tmco</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Initial</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Initially</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0205265</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[tmco]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8375" Type="LookupList" StartNode="1429" EndNode="1436">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">cnce</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Content</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Contents</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0456205</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[cnce]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8376" Type="LookupList" StartNode="1447" EndNode="1456">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">ftcn</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Increased</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Increase</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0442805</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[ftcn]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8377" Type="LookupList" StartNode="1457" EndNode="1469">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">hlca</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Surveillance</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Medical Surveillance</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0733511</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[hlca]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8378" Type="LookupList" StartNode="1477" EndNode="1485">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8379" Type="LookupList" StartNode="1492" EndNode="1496">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">qlco</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Less</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Smaller</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI, SNOMEDCT_US]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0547044</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[qlco]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8380" Type="LookupList" StartNode="1518" EndNode="1527">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">tmco</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Immediate</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Immediate</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0205253</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[tmco]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8381" Type="LookupList" StartNode="1528" EndNode="1536">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">acty</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[NCI, NLMSubSyn]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Disposal</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Disposal</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[NCI, NLMSubSyn]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1707797</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[acty]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8382" Type="LookupList" StartNode="1545" EndNode="1554">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">ftcn</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, MTH, SNMI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Depletion</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Depletion</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, MTH, SNMI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0333668</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[ftcn]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8383" Type="LookupList" StartNode="1562" EndNode="1572">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">sbst</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[HL7V3.0, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">stabilizer</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">stabilizer - ingredient</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[HL7V3.0, MTH]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1550603</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[sbst]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8384" Type="LookupList" StartNode="1577" EndNode="1581">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">ftcn</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">Lead</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">Leading</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[MTH, NCI]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C1522538</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[ftcn]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8385" Type="LookupList" StartNode="1605" EndNode="1615">
+<Feature>
+  <Name className="java.lang.String">IsHead</Name>
+  <Value className="java.lang.Boolean">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Type</Name>
+  <Value className="java.lang.String">Mapping</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Score</Name>
+  <Value className="java.lang.Integer">-1000</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypes</Name>
+  <Value className="java.util.ArrayList" itemClassName="java.lang.String">chvf</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SourcesString</Name>
+  <Value className="java.lang.String">[CHV, CSP]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptName</Name>
+  <Value className="java.lang.String">propellant</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">propellant</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">Sources</Name>
+  <Value className="java.lang.String">[CHV, CSP]</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">IsOvermatch</Name>
+  <Value className="java.lang.Boolean">false</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ConceptId</Name>
+  <Value className="java.lang.String">C0599677</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">SemanticTypesString</Name>
+  <Value className="java.lang.String">[chvf]</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8386" Type="LookupList" StartNode="1628" EndNode="1639">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;SPURIOUS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8387" Type="LookupList" StartNode="1645" EndNode="1652">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;SPURIOUS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8388" Type="LookupList" StartNode="1653" EndNode="1659">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8389" Type="LookupList" StartNode="1687" EndNode="1689">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8390" Type="LookupList" StartNode="1712" EndNode="1714">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8391" Type="LookupList" StartNode="1742" EndNode="1755">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;SPURIOUS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8392" Type="LookupList" StartNode="1758" EndNode="1768">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8393" Type="LookupList" StartNode="1769" EndNode="1777">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;SPURIOUS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8394" Type="LookupList" StartNode="1778" EndNode="1783">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8395" Type="LookupList" StartNode="1784" EndNode="1791">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8396" Type="LookupList" StartNode="1792" EndNode="1803">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;SPURIOUS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="8397" Type="LookupList" StartNode="1818" EndNode="1820">
+<Feature>
+  <Name className="java.lang.String">PreferredName</Name>
+  <Value className="java.lang.String">&lt;NONE OF ABOVE></Value>
+</Feature>
+</Annotation>
+</AnnotationSet>
+
 </GateDocument>

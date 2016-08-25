@@ -7,6 +7,7 @@ import gate.Factory;
 import gate.FeatureMap;
 import gate.Gate;
 import gate.Utils;
+import gate.util.AnnotationDiffer;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -602,11 +603,27 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 			}
 		}
 	}
+	
+	
+	private static float calDiff(AnnotationSet test, AnnotationSet response){
+		AnnotationDiffer differ = new AnnotationDiffer(); 
+		differ.calculateDiff(test, response);
+		float correctannoMatch = differ.getCorrectMatches();
+		float missingannoMatch = differ.getMissing();
+		double percisionavg = differ.getPrecisionAverage();
+		float annoRate= correctannoMatch/(correctannoMatch+missingannoMatch);
+		System.out.println(annoRate);
+		return annoRate;
+		
+	}
+	
 	private void updateCSV(long timeUsed, String FileName){
 		//String tmpCSVfileName="tmpcsv.csv";
 		String outLine;
 		List<String> csvLines = new ArrayList<String>();
 		try {
+			System.out.println(config.compare);
+			System.out.println(config.compareAS);
 			List<Annotation> fmentionList = currentDoc.getAnnotations(config.inputASName).get(config.mentionType).inDocumentOrder();
 			AnnotationSet fdoneAnns = currentDoc.getAnnotations(config.outputASName).get(config.mentionType);
 			System.out.println(fmentionList.size());
@@ -633,6 +650,12 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 					outLine=docId+"\t"+Long.toString(timeUsed);
 					if (finalComplete == true){
 						outLine=outLine+"\t"+"completed";
+						if (config.compare == true){
+							AnnotationSet freponse = currentDoc.getAnnotations(config.compareAS).get(config.mentionType);
+							float annoRate= calDiff(fdoneAnns, freponse);
+							System.out.println(annoRate);
+							outLine=outLine+"\t"+Float.toString(annoRate);
+						}
 					}
 					System.out.println(outLine);
 					csvLines.add(outLine);
@@ -649,7 +672,16 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 				System.out.println(outLine);
 				if (finalComplete == true){
 					outLine=outLine+"\t"+"completed";
+					if (config.compare == true){
+						AnnotationSet freponse = currentDoc.getAnnotations(config.compareAS).get(config.mentionType);
+						float annoRate= calDiff(fdoneAnns, freponse);
+						System.out.println(annoRate);
+						outLine=outLine+"\t"+Float.toString(annoRate);
+					}
+
 				}
+				
+				
 				csvLines.add(outLine);
 				//bw.write(outLine+"\r\n");
 			}
