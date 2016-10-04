@@ -69,10 +69,11 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	static String back = "Back";
 	static String next = "Next";
 	static String nextundone = "Next Undone";
+	static String save = "Save";
 	static String saveandexit = "Save and Exit";
 
     static JFrame frame = new JFrame("GATE Simple Manual Annotator");
-	JButton lastUndoneButton, backButton, nextButton, undoneButton, exitButton;
+	JButton lastUndoneButton, backButton, nextButton, undoneButton, saveButton, exitButton;
 	JLabel progress;
 	JEditorPane display = new JEditorPane();
     ButtonGroup optionGroup = new ButtonGroup();
@@ -161,6 +162,11 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         undoneButton.setHorizontalTextPosition(AbstractButton.CENTER);
         undoneButton.setActionCommand(nextundone);
 
+        saveButton = new JButton(save);
+        saveButton.setVerticalTextPosition(AbstractButton.CENTER);
+        saveButton.setHorizontalTextPosition(AbstractButton.CENTER);
+        saveButton.setActionCommand(save);
+
         exitButton = new JButton(saveandexit);
         exitButton.setVerticalTextPosition(AbstractButton.CENTER);
         exitButton.setHorizontalTextPosition(AbstractButton.CENTER);
@@ -171,12 +177,14 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         backButton.addActionListener(this);
         nextButton.addActionListener(this);
         undoneButton.addActionListener(this);
+        saveButton.addActionListener(this);
         exitButton.addActionListener(this);
  
         lastUndoneButton.setToolTipText("Click this button to return to the last undone item.");
         backButton.setToolTipText("Click this button to return to the previous item.");
         nextButton.setToolTipText("Click this button to skip to the next item.");
         undoneButton.setToolTipText("Click this button to skip to the next undone item.");
+        saveButton.setToolTipText("Click this button to save the current document.");
         exitButton.setToolTipText("Click this button to save the current document and exit.");
  
         //Add Components to this container, using the default FlowLayout.
@@ -184,6 +192,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
         buttonFrame.add(backButton);
         buttonFrame.add(nextButton);
         buttonFrame.add(undoneButton);
+        buttonFrame.add(saveButton);
         buttonFrame.add(exitButton);
         
         add(dispFrame);
@@ -331,6 +340,8 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 			next(false);
 	    } else if (nextundone.equals(what)) {
 			next(true);
+	    } else if (save.equals(what)) {
+			saveDoc();
 	    } else if (saveandexit.equals(what)) {
 			saveDoc();
 			System.exit(0);
