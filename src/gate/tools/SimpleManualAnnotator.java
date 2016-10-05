@@ -101,11 +101,12 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	AnnotationTask currentAnnotationTask;
 
 	
-    public SimpleManualAnnotator(File conf, File[] corpus, String csvFile) {
+    public SimpleManualAnnotator(File conf, File[] corpus) {
     	//this.outputDir=outputDir;
-    	this.csvFile=csvFile;
+    	
 		config = new Configuration(conf);
 		this.corpus = corpus;
+		this.csvFile=config.outputTsv;
 		next(true);
     	
     	JPanel dispFrame = new JPanel();
@@ -307,7 +308,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 		gate.Utils.loadPlugin("Format_FastInfoset");
 		File[] corpus = new File[0];
 		//File annoDoneDir=new File(args[2]);
-		String annoCsvFile = args[2];
+		//String annoCsvFile = args[2];
 		
     	if(args.length<2){
     		System.out.println("Usage: simpleManualAnnotator <config> <corpusDir>");
@@ -330,7 +331,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 			System.exit(0);
     	}
 
-    	SimpleManualAnnotator sma = new SimpleManualAnnotator(new File(args[0]), corpus, annoCsvFile);
+    	SimpleManualAnnotator sma = new SimpleManualAnnotator(new File(args[0]), corpus);
     	createAndShowGUI(sma);
     }
 
@@ -428,6 +429,11 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 				thisAnn = mentionList.get(currentAnnIndex);
 				isitdone = Utils.getCoextensiveAnnotations(doneAnns, thisAnn);
 			}
+		}
+		System.out.println(config.autosave);
+		if (config.autosave){
+			System.out.println("auto save");
+			saveDoc();
 		}
 	}
 	
@@ -592,7 +598,10 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 				long timeDiff=(timeEnd-timeStart)/1000;
 				System.out.println(timeDiff);
 				thisdocfile = new FileWriter(corpus[currentDocIndex]);
-				updateCSV(timeDiff, corpus[currentDocIndex].getPath());
+				if (config.outputTsv!=null){
+					System.out.println(csvFile);
+					updateCSV(timeDiff, corpus[currentDocIndex].getPath());
+				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -644,8 +653,8 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 	   		if(fmentionList.size()==fdoneAnns.size()) finalComplete = true;
 	   		System.out.println(finalComplete);
 
-			
-			BufferedReader br = new BufferedReader(new FileReader(csvFile));
+			//File ffcsv=new File(csvFile);
+			BufferedReader br = new BufferedReader(new FileReader(csvFile.trim()));
 			//BufferedWriter bw = new BufferedWriter(new FileWriter(tmpCSVfileName,false));
 			String csvSplitBy = "\t";
 			String line;

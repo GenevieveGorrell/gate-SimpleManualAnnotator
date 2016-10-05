@@ -11,6 +11,8 @@ includeNoneOfAbove = true
 includeSpurious = true
 compare = true
 compareAS = Key
+outputTsv = /Users/xingyi/Gate/gateCodes/gate-SimpleManualAnnotator/xingyi.csv 
+autosave = true
 
 #mode = OPTIONSFROMFEATURE
 #inputASName = null
