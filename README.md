@@ -24,6 +24,11 @@ Your corpus of GATE documents needs to be prepared with annotations that describ
 - outputASName - Once the annotator has made their choice, an output annotation will be generated recording this. The output annotation set name indicates the annotation set you want these judgements to go into.
 - includeNoneOfAbove - In addition to the choices you provide, do you want the annotator to also see an automatically generated "none of the above" option? This would be used to indicate that the mention is valid, but that it was impossible to choose the correct choice from the ones provided. An example might be annotating locations as countries or cities, and receiving a location that is a county. The annotation is a valid location, but the "county" option wasn't available.
 - includeSpurious - In addition to the choices you provide, do you want the annotator to also see an automatically generated "spurious" option? This would be used to indicate that the mention is not a valid example of the type being annotated. For example, when annotating locations, if a mention is presented that isn't a location, this option would be used to indicate that.
+-outputTsv - Record annotation time and dcompleted ocument to a tsv file
+-compare - Compare the annotation difference rate with other annotation set
+-compareAS - The annotation set what to compare the difference
+-autosave - Automatice save document
+
 
 **OPTIONSFROMSTRING**
 
