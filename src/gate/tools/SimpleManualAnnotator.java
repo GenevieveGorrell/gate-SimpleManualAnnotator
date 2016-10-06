@@ -430,7 +430,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 				isitdone = Utils.getCoextensiveAnnotations(doneAnns, thisAnn);
 			}
 		}
-		System.out.println(config.autosave);
+		//System.out.println(config.autosave);
 		if (config.autosave){
 			System.out.println("auto save");
 			saveDoc();
@@ -591,15 +591,15 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 		if(currentDoc!=null){
 			FileWriter thisdocfile = null;
 			try {
-				System.out.println(corpus[currentDocIndex].getPath());
+				//System.out.println(corpus[currentDocIndex].getPath());
 				timeEnd=System.currentTimeMillis();
-				System.out.println(timeStart);
-				System.out.println(timeEnd);
+				//System.out.println(timeStart);
+				//System.out.println(timeEnd);
 				long timeDiff=(timeEnd-timeStart)/1000;
-				System.out.println(timeDiff);
+				//System.out.println(timeDiff);
 				thisdocfile = new FileWriter(corpus[currentDocIndex]);
 				if (config.outputTsv!=null){
-					System.out.println(csvFile);
+					//System.out.println(csvFile);
 					updateCSV(timeDiff, corpus[currentDocIndex].getPath());
 				}
 			} catch (IOException e) {
@@ -633,7 +633,7 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 		float missingannoMatch = differ.getMissing();
 		double percisionavg = differ.getPrecisionAverage();
 		float annoRate= correctannoMatch/(correctannoMatch+missingannoMatch);
-		System.out.println(annoRate);
+		//System.out.println(annoRate);
 		return annoRate;
 		
 	}
@@ -643,15 +643,15 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 		String outLine;
 		List<String> csvLines = new ArrayList<String>();
 		try {
-			System.out.println(config.compare);
-			System.out.println(config.compareAS);
+			//System.out.println(config.compare);
+			//System.out.println(config.compareAS);
 			List<Annotation> fmentionList = currentDoc.getAnnotations(config.inputASName).get(config.mentionType).inDocumentOrder();
 			AnnotationSet fdoneAnns = currentDoc.getAnnotations(config.outputASName).get(config.mentionType);
-			System.out.println(fmentionList.size());
-			System.out.println(fdoneAnns.size());
+			//System.out.println(fmentionList.size());
+			//System.out.println(fdoneAnns.size());
 			boolean finalComplete = false;
 	   		if(fmentionList.size()==fdoneAnns.size()) finalComplete = true;
-	   		System.out.println(finalComplete);
+	   		//System.out.println(finalComplete);
 
 			//File ffcsv=new File(csvFile);
 			BufferedReader br = new BufferedReader(new FileReader(csvFile.trim()));
@@ -663,9 +663,9 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 				String[] csvLine = line.split(csvSplitBy);
 				String docId=csvLine[0];
 				long docTime=Long.parseLong(csvLine[1]);
-				System.out.println(FileName+' '+docId);
+				//System.out.println(FileName+' '+docId);
 				if (docId.trim().equals(FileName.trim())){
-					System.out.println("find existed file");
+					//System.out.println("find existed file");
 					timeUsed=timeUsed+docTime;
 					docExisted=true;
 					outLine=docId+"\t"+Long.toString(timeUsed);
@@ -674,11 +674,11 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 						if (config.compare == true){
 							AnnotationSet freponse = currentDoc.getAnnotations(config.compareAS).get(config.mentionType);
 							float annoRate= calDiff(fdoneAnns, freponse);
-							System.out.println(annoRate);
+							//System.out.println(annoRate);
 							outLine=outLine+"\t"+Float.toString(annoRate);
 						}
 					}
-					System.out.println(outLine);
+					//System.out.println(outLine);
 					csvLines.add(outLine);
 					//bw.write(outLine+"\r\n");
 				}
@@ -690,13 +690,13 @@ public class SimpleManualAnnotator extends JPanel implements ActionListener {
 			}
 			if (docExisted==false){
 				outLine=FileName+"\t"+Long.toString(timeUsed);
-				System.out.println(outLine);
+				//System.out.println(outLine);
 				if (finalComplete == true){
 					outLine=outLine+"\t"+"completed";
 					if (config.compare == true){
 						AnnotationSet freponse = currentDoc.getAnnotations(config.compareAS).get(config.mentionType);
 						float annoRate= calDiff(fdoneAnns, freponse);
-						System.out.println(annoRate);
+						//System.out.println(annoRate);
 						outLine=outLine+"\t"+Float.toString(annoRate);
 					}
 
